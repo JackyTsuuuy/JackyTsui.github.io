@@ -194,20 +194,12 @@
       </div>
       <div class="article-entry">
         
-          <h2 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h2><p>最近老想着折腾一个属于自己的博客。(虽然简书用起来方便，但是github逼格高啊！)所以出于种种原因吧，还是觉得github能比较个人特色鲜明点。而且在有些国内的博客都要翻墙访问的情况下，github的个人主页居然不需要，这种事也让我感受到了意外的惊喜。所以反正都是要翻墙折腾，不如就选一个有逼格的，当然装逼也是得付出点代价的，需要稍稍花点时间来折腾。</p>
-<p>因为刚开始折腾，所以本篇先主要讲如何将这些基本部件安装搭起来。</p>
-<p>此外，讲如何使用github pages和hexo搭建博客的教程很多。本教程部分也参考于这些。<br>这里也帮大家马一些：<br>（1）使用GitHub和Hexo搭建免费静态Blog<br><a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="noopener">http://www.jianshu.com/p/465830080ea9</a><br>（2）Windows下一步步搭建自己的独立博客——使用 GitHub Pages + Hexo 基础教程<br><a href="http://www.jianshu.com/p/985d07d88ef4" target="_blank" rel="noopener">http://www.jianshu.com/p/985d07d88ef4</a><br>（3）一步步在GitHub上创建博客主页<br><a href="http://www.pchou.info/web-build/2013/01/03/build-github-blog-page-01.html" target="_blank" rel="noopener">http://www.pchou.info/web-build/2013/01/03/build-github-blog-page-01.html</a><br>（4）使用GitHub和Hexo搭建免费静态Blog<br><a href="http://wsgzao.github.io/post/hexo-guide/" target="_blank" rel="noopener">http://wsgzao.github.io/post/hexo-guide/</a>  </p>
-<p>闲扯的有点多了，赶紧开始吧。因为自己是小白，我在这里主要是以小白视角讲一下如何理解并配置这些。</p>
-<h2 id="安装篇"><a href="#安装篇" class="headerlink" title="安装篇"></a>安装篇</h2><p>总体来说，搭建这样一个博客，需要两个东西，就如题所讲，一是github，一是hexo。hexo是node.js下的一个静态博客框架。安装完node.js就会自带有hexo，再安装下即可使用。  </p>
-<p>###（1）github windows桌面版：<br><a href="https://desktop.github.com/" target="_blank" rel="noopener">https://desktop.github.com/</a><br>除了需要翻墙，基本是一键安装系列，不出意外安装完之后桌面上会多出来一个，github和一个git shell  </p>
-<p>###（2）安装node.js:<br><a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a><br>可能这里有两个版本，搭建hexo的话，貌似两个版本都可以，此处不需要纠结，也基本是一键安装  </p>
-<p>###（3）安装hexo，这里可参考官网给出的方法：<br><a href="https://hexo.io/zh-cn" target="_blank" rel="noopener">https://hexo.io/zh-cn</a><br>其实官网给出的安装和使用方法还是挺详细的，比很多教程写的好，可以去看看  </p>
-<p>打开git shell，输入如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g  //安装hexo</span><br><span class="line">hexo init blog  //新建blog目录，初始化到blog目录下</span><br><span class="line">cd blog  //进入blog目录</span><br><span class="line">npm install   //安装</span><br></pre></td></tr></table></figure></p>
-<p>###（4）安装hexo插件<br>执行下列命令即可安装以下插件，可以看作是安装generator，server，deploy这些命令下的一些功能吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save  </span><br><span class="line">npm install hexo-generator-archive --save  </span><br><span class="line">npm install hexo-generator-category --save  </span><br><span class="line">npm install hexo-generator-tag --save  </span><br><span class="line">npm install hexo-server --save  </span><br><span class="line">npm install hexo-deployer-git --save  </span><br><span class="line">npm install hexo-deployer-heroku --save  </span><br><span class="line">npm install hexo-deployer-rsync --save  </span><br><span class="line">npm install hexo-deployer-openshift --save  </span><br><span class="line">npm install hexo-renderer-marked@0.2 --save  </span><br><span class="line">npm install hexo-renderer-stylus@0.2 --save  </span><br><span class="line">npm install hexo-generator-feed@1 --save  </span><br><span class="line">npm install hexo-generator-sitemap@1 --save</span><br></pre></td></tr></table></figure></p>
-<p>此时基本安装已经完成<br>执行以下命令，在浏览器登录localhost：4000即可查看效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
-<p>##基本的查看安装效果的方法：  </p>
-<p>cd进入安装的hexo目录（当然如果加入过环境变量应该就不用了）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new &apos;title&apos;//在source\_posts，生成文章，名为title</span><br><span class="line">hexo server //启动一个本地的服务器，在本地发布预览效果</span><br><span class="line">hexo generator //生成public静态文件</span><br></pre></td></tr></table></figure></p>
-
+          <h2 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h2><p>最近老想着折腾一个属于自己的博客。(虽然简书用起来方便，但是github逼格高啊！)所以出于种种原因吧，还是觉得github能比较个人特色鲜明点。而且在有些国内的博客都要翻墙访问的情况下，github的个人主页居然不需要，这种事也让我感受到了意外的惊喜。所以反正都是要翻墙折腾，不如就选一个有逼格的，当然装逼也是得付出点代价的，需要稍稍花点时间来折腾。<br>
+          <p>
+            <a href="/2016/03/31/github-pages-hexo创建个人主页/">
+              Read More
+            </a>
+          </p>
         
       </div>
     </div>

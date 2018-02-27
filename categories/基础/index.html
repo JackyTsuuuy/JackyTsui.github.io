@@ -187,17 +187,12 @@
       </div>
       <div class="article-entry">
         
-          <p>这里所有示例机器在虚拟机环境下进行实验。<br>实验域环境的简单说明：  </p>
-<blockquote>
-<p>域控：<br>Ip:10.10.133.1<br>操作系统：win2008英文版<br>域名：test.com<br>客户机：<br>Pc1：<br>Ip:10.10.133.2<br>操作系统：win7<br>域账号：joom（普通域用户组）<br>Pc2：<br>Ip:10.10.133.3<br>操作系统：winxp<br>域账号：boom（域管理员组）</p>
-</blockquote>
-<h2 id="客户机加入域："><a href="#客户机加入域：" class="headerlink" title="客户机加入域："></a>客户机加入域：</h2><p>这里以win7客户机为例  </p>
-<p>1.打开计算机属性</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-3fa357dc1cec0dad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1">  <br>2.打开“高级系统设置”</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-d3d28a1a255213e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2"><br>3.在“计算机名”标签下选择“更改”</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-d324d500d0c59351.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3"><br>4.填入域名，这里以test.com为例，之后会弹出一个登录框，填写域账号和密码即可登录，这里域账号以joom为例。  </p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-9df14ffb991a71b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4"></p>
-
+          <h2 id="客户机加入域："><a href="#客户机加入域：" class="headerlink" title="客户机加入域："></a>客户机加入域：</h2>
+          <p>
+            <a href="/2016/04/01/Win2008-英文版-搭建简单域环境-3/">
+              Read More
+            </a>
+          </p>
         
       </div>
     </div>
@@ -240,31 +235,12 @@
       </div>
       <div class="article-entry">
         
-          <p>这里所有示例机器在虚拟机环境下进行实验。<br>实验域环境的简单说明：  </p>
-<blockquote>
-<p>域控：<br>Ip:10.10.133.1<br>操作系统：win2008英文版<br>域名：test.com<br>客户机：<br>Pc1：<br>Ip:10.10.133.2<br>操作系统：win7<br>域账号：joom（普通域用户组）<br>Pc2：<br>Ip:10.10.133.3<br>操作系统：winxp<br>域账号：boom（域管理员组）</p>
-</blockquote>
-<h2 id="域账号的配置："><a href="#域账号的配置：" class="headerlink" title="域账号的配置："></a>域账号的配置：</h2><h4 id="一．图形界面方式"><a href="#一．图形界面方式" class="headerlink" title="一．图形界面方式:"></a>一．图形界面方式:</h4><ol>
-<li>登录域控  </li>
-<li>在”administrative Tools”中打开”Active Directory Domains  and Trusts “<br> <br><img src="http://upload-images.jianshu.io/upload_images/1800415-6a881ba9954b8fc0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1"><br>3.选择刚建立的test.com，右键选择”Manage”  </li>
-</ol>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-e5bf841042951b56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2"><br><img src="http://upload-images.jianshu.io/upload_images/1800415-ba5dab428cb2154e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3"></p>
-<p>4.在”users”上右键，选择”New”下的”user”  </p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-5d162e7cc67aa9fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4">  </p>
-<p>5.填写要添加的账号信息，这里账户名以”joom”为例。同理，添加”boom”<br><img src="http://upload-images.jianshu.io/upload_images/1800415-b228fdfbc6c79e13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="5"></p>
-<p>6.填写密码，勾选”User cannot change password”用户不可改变密码，”password never expires”密码不过期，然后Next。然后Finish<br><img src="http://upload-images.jianshu.io/upload_images/1800415-2a3916911fee48f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="6"></p>
-<p>7.然后Finish</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-1fed6cf075eb3859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="7"><br>8.同理添加boom账号，之后将boom账号添加入管理员组。在boom账号上右击，选择”properties”，打开”Member of”标签，打开”Add”，填写要加入的组” Domain Admins”,然后”OK”</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-6de6e1b491962959.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="8"><br>9.查看添加好的信息</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-29c1639b1f3e874f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="9"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-26da9c4bcb2f2649.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="10"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-ec9808b553583969.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="11"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-54cf76c54be6a71d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="12"></p>
-<h4 id="二．命令行方式"><a href="#二．命令行方式" class="headerlink" title="二．命令行方式"></a>二．命令行方式</h4><p>打开cmd输入命令：<br>1.命令格式<br><code>net user username password /add /domain</code>  </p>
-<p>2.以用户名为boom ，密码为password为例<br><code>net user boom password /add /domain</code></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-7ca46974795da774.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="13"><br>如果提示这个则说明密码强度不够，可以换个长点的密码试试</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-035d09d832dc3072.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="14"><br>3.将用户加入管理员组<br><code>net group “domain admins” boom /add /domain</code><br>4.完成，同理添加其他账户</p>
-
+          <h2 id="域账号的配置："><a href="#域账号的配置：" class="headerlink" title="域账号的配置："></a>域账号的配置：</h2>
+          <p>
+            <a href="/2016/04/01/Win2008-英文版-搭建简单域环境-2/">
+              Read More
+            </a>
+          </p>
         
       </div>
     </div>
@@ -307,25 +283,12 @@
       </div>
       <div class="article-entry">
         
-          <p>这里所有示例机器在虚拟机环境下进行实验。<br>实验域环境的简单说明：  </p>
-<blockquote>
-<p>域控：<br>Ip:10.10.133.1<br>操作系统：win2008英文版<br>域名：test.com<br>客户机：<br>Pc1：<br>Ip:10.10.133.2<br>操作系统：win7<br>域账号：joom（普通域用户组）<br>Pc2：<br>Ip:10.10.133.3<br>操作系统：winxp<br>域账号：boom（域管理员组）  </p>
-</blockquote>
-<h2 id="域控的搭建："><a href="#域控的搭建：" class="headerlink" title="域控的搭建："></a>域控的搭建：</h2><p>首先设置网卡为NAT，ip为静态10.10.133.1，网关和DNS都配置为10.10.133.1  </p>
-<p>1.win+r，输入“dcpromo”，打开AD安装向导,next  </p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-d19a18d6834f8d0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1"><br>2.next</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-0eb50f3fb7c2d51c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2"><br>3.选择”create a new domain in a new forest”,next</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-85b8317f350ee8a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3"><br>4.提示这个,表明要设置本地账户的密码</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-eb11c3cf59b12e15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4"><br>5.填写林根域的FQDN名(FQDN of the forest root domain),这里以test.com为例</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-3087365a1fb76cdf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="5"><br>6.选择林功能级别(Forest function level)，和域功能级别(Domain function level)，以下为支持情况，这里选择win2003为例</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-01c46c4c906696f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="6"><br><img src="http://upload-images.jianshu.io/upload_images/1800415-b3b5e1517f5d79b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="7">  </p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-5bcebf52ae05559d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="8"><br>7.在“additional domain controller options”中选择”DNS server”,next  </p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-f0e17fafd30ff9f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="9"><br>8.设置数据库，日志文件，SYSVOL的存储位置，这里使用默认位置</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-785b21b0634c0004.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="10"><br>9.设置还原模式(Restore Mode)的密码</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-7ea35c874a1972fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="11"><br>10.next</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-215514c9e5a7f751.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="12"> <br>11.完成，之后选择重启</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-fe028cdbda069c73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="13"></p>
-
+          <h2 id="域控的搭建："><a href="#域控的搭建：" class="headerlink" title="域控的搭建："></a>域控的搭建：</h2>
+          <p>
+            <a href="/2016/04/01/Win2008-英文版-搭建简单域环境-1/">
+              Read More
+            </a>
+          </p>
         
       </div>
     </div>
@@ -368,20 +331,12 @@
       </div>
       <div class="article-entry">
         
-          <h2 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h2><p>最近老想着折腾一个属于自己的博客。(虽然简书用起来方便，但是github逼格高啊！)所以出于种种原因吧，还是觉得github能比较个人特色鲜明点。而且在有些国内的博客都要翻墙访问的情况下，github的个人主页居然不需要，这种事也让我感受到了意外的惊喜。所以反正都是要翻墙折腾，不如就选一个有逼格的，当然装逼也是得付出点代价的，需要稍稍花点时间来折腾。</p>
-<p>因为刚开始折腾，所以本篇先主要讲如何将这些基本部件安装搭起来。</p>
-<p>此外，讲如何使用github pages和hexo搭建博客的教程很多。本教程部分也参考于这些。<br>这里也帮大家马一些：<br>（1）使用GitHub和Hexo搭建免费静态Blog<br><a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="noopener">http://www.jianshu.com/p/465830080ea9</a><br>（2）Windows下一步步搭建自己的独立博客——使用 GitHub Pages + Hexo 基础教程<br><a href="http://www.jianshu.com/p/985d07d88ef4" target="_blank" rel="noopener">http://www.jianshu.com/p/985d07d88ef4</a><br>（3）一步步在GitHub上创建博客主页<br><a href="http://www.pchou.info/web-build/2013/01/03/build-github-blog-page-01.html" target="_blank" rel="noopener">http://www.pchou.info/web-build/2013/01/03/build-github-blog-page-01.html</a><br>（4）使用GitHub和Hexo搭建免费静态Blog<br><a href="http://wsgzao.github.io/post/hexo-guide/" target="_blank" rel="noopener">http://wsgzao.github.io/post/hexo-guide/</a>  </p>
-<p>闲扯的有点多了，赶紧开始吧。因为自己是小白，我在这里主要是以小白视角讲一下如何理解并配置这些。</p>
-<h2 id="安装篇"><a href="#安装篇" class="headerlink" title="安装篇"></a>安装篇</h2><p>总体来说，搭建这样一个博客，需要两个东西，就如题所讲，一是github，一是hexo。hexo是node.js下的一个静态博客框架。安装完node.js就会自带有hexo，再安装下即可使用。  </p>
-<p>###（1）github windows桌面版：<br><a href="https://desktop.github.com/" target="_blank" rel="noopener">https://desktop.github.com/</a><br>除了需要翻墙，基本是一键安装系列，不出意外安装完之后桌面上会多出来一个，github和一个git shell  </p>
-<p>###（2）安装node.js:<br><a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a><br>可能这里有两个版本，搭建hexo的话，貌似两个版本都可以，此处不需要纠结，也基本是一键安装  </p>
-<p>###（3）安装hexo，这里可参考官网给出的方法：<br><a href="https://hexo.io/zh-cn" target="_blank" rel="noopener">https://hexo.io/zh-cn</a><br>其实官网给出的安装和使用方法还是挺详细的，比很多教程写的好，可以去看看  </p>
-<p>打开git shell，输入如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g  //安装hexo</span><br><span class="line">hexo init blog  //新建blog目录，初始化到blog目录下</span><br><span class="line">cd blog  //进入blog目录</span><br><span class="line">npm install   //安装</span><br></pre></td></tr></table></figure></p>
-<p>###（4）安装hexo插件<br>执行下列命令即可安装以下插件，可以看作是安装generator，server，deploy这些命令下的一些功能吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save  </span><br><span class="line">npm install hexo-generator-archive --save  </span><br><span class="line">npm install hexo-generator-category --save  </span><br><span class="line">npm install hexo-generator-tag --save  </span><br><span class="line">npm install hexo-server --save  </span><br><span class="line">npm install hexo-deployer-git --save  </span><br><span class="line">npm install hexo-deployer-heroku --save  </span><br><span class="line">npm install hexo-deployer-rsync --save  </span><br><span class="line">npm install hexo-deployer-openshift --save  </span><br><span class="line">npm install hexo-renderer-marked@0.2 --save  </span><br><span class="line">npm install hexo-renderer-stylus@0.2 --save  </span><br><span class="line">npm install hexo-generator-feed@1 --save  </span><br><span class="line">npm install hexo-generator-sitemap@1 --save</span><br></pre></td></tr></table></figure></p>
-<p>此时基本安装已经完成<br>执行以下命令，在浏览器登录localhost：4000即可查看效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
-<p>##基本的查看安装效果的方法：  </p>
-<p>cd进入安装的hexo目录（当然如果加入过环境变量应该就不用了）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new &apos;title&apos;//在source\_posts，生成文章，名为title</span><br><span class="line">hexo server //启动一个本地的服务器，在本地发布预览效果</span><br><span class="line">hexo generator //生成public静态文件</span><br></pre></td></tr></table></figure></p>
-
+          <h2 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h2><p>最近老想着折腾一个属于自己的博客。(虽然简书用起来方便，但是github逼格高啊！)所以出于种种原因吧，还是觉得github能比较个人特色鲜明点。而且在有些国内的博客都要翻墙访问的情况下，github的个人主页居然不需要，这种事也让我感受到了意外的惊喜。所以反正都是要翻墙折腾，不如就选一个有逼格的，当然装逼也是得付出点代价的，需要稍稍花点时间来折腾。<br>
+          <p>
+            <a href="/2016/03/31/github-pages-hexo创建个人主页/">
+              Read More
+            </a>
+          </p>
         
       </div>
     </div>

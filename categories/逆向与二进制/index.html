@@ -187,49 +187,12 @@
       </div>
       <div class="article-entry">
         
-          <h4 id="来自纯新手的手把手实践经验分享"><a href="#来自纯新手的手把手实践经验分享" class="headerlink" title="来自纯新手的手把手实践经验分享"></a>来自纯新手的手把手实践经验分享</h4><p><strong>初次</strong>接触逆向，简单记录一下心路历程及一些自认为有趣的东西，大佬们可绕过或者多多指教<br>==这里用的是1.04版本，1.01版本基本雷同==  </p>
-<p><strong>下面就开始了此次的心路历程：</strong><br>首先是看到了<br><a href="https://paper.seebug.org/519/，参照其中" target="_blank" rel="noopener">https://paper.seebug.org/519/，参照其中</a>  </p>
-<p>1.下载游戏安装包，修改后缀为zip可用解压工具打开，发现存在assets\bin\Data\Managed目录（判断游戏应该为Unity游戏的一个特征）。据说此类游戏主要逻辑代码在Assembly-Csharp.dll中，所以主要分析的就是这个。<br><img src="http://upload-images.jianshu.io/upload_images/1800415-20992228b178e915.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-0d15adce28adeb55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>2.得知此类游戏为unity3d开发后（好像和传统的安卓逆向有些不同），在代码未混淆加密的情况下可以用.net的逆向工具dnspy分析其中的dll文件。  很幸运这里没有加密。工具自行百度吧，从官网还是挺好下的。打开Assembly-Csharp.dll后大概长这样。  如果为英文看着比较费劲，可以在视图中切换成中文。<br><img src="http://upload-images.jianshu.io/upload_images/1800415-2e1fbc8c921ce083.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  </p>
-<p>3.第一眼还是有点不知所措，现在参考前面的教程可发现，他的思路是从抽奖券开始的，首先发现在抽奖券不足时会提示一串文字，看不懂没关系，能看到其中有个“足”字就ok。<br><img src="http://upload-images.jianshu.io/upload_images/1800415-c708e84a9c291f04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  </p>
-<p>这时如果没有更改界面，可以在旁边看到搜索框，选中当前的dll文件，再选择搜索字符串，搜索“足”即可发现找到了两个匹配项。<br><img src="http://upload-images.jianshu.io/upload_images/1800415-d4128126be1c923c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  </p>
-<p>4.这里可猜测第一个是和抽奖券有关（字都一样好嘛），<br><img src="http://upload-images.jianshu.io/upload_images/1800415-e6c4bb574b8924bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>第二个猜测和三叶草的数量有关（别问我咋猜的）<br><img src="http://upload-images.jianshu.io/upload_images/1800415-3fa35acf1a4f022a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>可看到这里有和抽奖券类似的判断<br><img src="http://upload-images.jianshu.io/upload_images/1800415-daa19c15360936db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>:):)<br><img src="http://upload-images.jianshu.io/upload_images/1800415-27565983722f38ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  </p>
-<p>5.所以这里参照各种大佬的教程先从抽奖券开始吧：<br>由于这里可以看到是对TicketStock()进行的判断，<br><img src="http://upload-images.jianshu.io/upload_images/1800415-83e1b1b111d4dfca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点击即可跳转到相关方法，猜测这里表示奖券的库存，<br><img src="http://upload-images.jianshu.io/upload_images/1800415-b6df27fecac0b4fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>可看到是返回的  </p>
-<blockquote>
-<p>return SuperGameMaster.saveData.ticket;  </p>
-</blockquote>
-<p>再点击<br><img src="http://upload-images.jianshu.io/upload_images/1800415-8bdf4ca4387c614f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>搜索，然后一个一个找<br><img src="http://upload-images.jianshu.io/upload_images/1800415-71b18c8446449939.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>这里大概为对奖券数量的初始化<br><img src="http://upload-images.jianshu.io/upload_images/1800415-df1de74ef9d4c76f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>这里可以修改奖券的初始值，参照开篇提到的教程，可改成一个比较大的值，但奖券终究有花完的一天，而且即使改成1000，花的也非常快，后面会讲到。  这里猜测还会限制奖券获得的数量，（<strong>所以那些玩正常版本的小伙伴们啊，有奖券赶紧花，最多就只能攒999个，手动滑稽</strong>）。<br><img src="http://upload-images.jianshu.io/upload_images/1800415-e4ced0ed41de7ea5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>但这里要说就要说骚玩法，那就是开篇教程的第二种修改方式，将数量写死在代码里，因为已知抽奖的时候奖券是从SuperGameMaster.TicketStock()获取的，令其返回值为固定的数值。这里找到该方法，右键选择编辑IL指令。<br><img src="http://upload-images.jianshu.io/upload_images/1800415-a1f8d0e46f8cd979.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>选中第一条，删除<br><img src="http://upload-images.jianshu.io/upload_images/1800415-d5964b30c4eb272c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>操作码换成ldc.14，说人话就是这个操作码可以改成各种整数（也许太大会溢出吧）这几个操作码有啥区别见图，这里改个大于5的数，够抽就行了，反正不会变，低调些就改个20吧，改完确定。<br><img src="http://upload-images.jianshu.io/upload_images/1800415-062dd889cff8c725.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-ad8c21a1c78f395b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>6.同理改可改上方三叶草逻辑，一样的操作一样的方法，不赘述<br><img src="http://upload-images.jianshu.io/upload_images/1800415-f6651fe1adbb9f35.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  </p>
-<p>截至目前，第一阶段完成，基本可以玩耍了，打包签名后就尝试了一下（后续会提到如何打包签名）。  </p>
-<p>人总是贪婪的！曾经我也以为到这里就可以开心的玩耍了，开心地玩了几天，花不完的钱，抽不完的奖券，开心。<br><strong>但是！！！</strong>随之而来的一些体验依旧让人感觉不爽：  </p>
-<p><strong>所以开始了第二阶段的优化游玩体验：</strong>  </p>
-<p>首先，少了可玩性（虽然本来就没多少可玩的），如果把三叶草的值写死，采集三叶草就完全没有意义了，这里承接前文，再往上翻了翻，看到了这段代码：<br><img src="http://upload-images.jianshu.io/upload_images/1800415-01745c7e745111ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>接着猜测这里是采集三叶草的判断，修改为直接增加888，就可以在采集时直接增加888三叶草：<br><img src="http://upload-images.jianshu.io/upload_images/1800415-bde0f5a4a9a54644.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-d9072c21b212b27d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><strong>其次是抽奖券</strong>  </p>
-<ol>
-<li><p>无聊的重复性劳动：<br>有了抽奖券只是可以去抽各种颜色的球，至于抽到什么颜色的球概率不同，比如黄球的概率极其低，这里如果像上文所说的把奖券改成一个大的数字，比如1000，可能抽完了也不一定能遇到黄球，青蛙还怎么能愉快的旅行！这就是为什么要改为一个固定值，可以无限抽。<br>那么虽然现在可以无限抽了，但是抽奖这种事，目的是为了获得奖品，有时候为了多抽几个黄球的车票需要抽很久，这种枯燥无聊的重复性劳动，肯定不是我们想要的。<br>有了这种需求，自己首先考虑了用自动化的方式去完成这种无聊的工作，此处借鉴了前段时间写的微信跳一跳外挂。用的安卓手机（苹果不了解），可以利用adb模拟点击来进行抽奖和随机的物品选择。写起来不难，大家可以自我尝试下，python实现还是挺容易的。这里承认自己代码写的比较糙，不够赏心悦目就不贴出来丢人了，实在有需要可以尝试留言或私信我啥的(虽然我不一定回，由于分辨率你的手机也不一定适用)。自己仅做了简单的实现和初步的不科学的统计，可能以后有空会考虑到球颜色精确识别和物品的精确选择吧，大致效果：<br><img src="http://upload-images.jianshu.io/upload_images/1800415-1e506411da4ef718.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-</li>
-<li><p>有用球的概率奇低：<br>有了上述改进依旧不能解决很难抽到小概率球的问题，比如黄球和红球，有时候脚本跑了个把小时，蓝球都好几十个黄球却只有两三个。于是接着翻翻，看看有没有什么新发现。<br>这里游戏中对各种球的称呼为青玉黄玉啥的，这里尝试搜索一下“玉”，果然有发现。<br><img src="http://upload-images.jianshu.io/upload_images/1800415-01e5148908694e2b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>往上翻发现了疑似各种球概率的定义（黄球1%……）：<br><img src="http://upload-images.jianshu.io/upload_images/1800415-92a3d12211044cb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>话不多说同样的方式尝试进行修改，<br><img src="http://upload-images.jianshu.io/upload_images/1800415-c46362fd0079fd9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>0x3c是60，0x1b是27，然后是9，3，1,找到对应的即可修改为想要的值，这里改成了1，24，25，25，25：<br><img src="http://upload-images.jianshu.io/upload_images/1800415-96440b9fb0a3a19a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="http://upload-images.jianshu.io/upload_images/1800415-cce2229a5adce126.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-</li>
-</ol>
-<p>至此需求已经解决  </p>
-<h5 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h5><p>这里貌似是来看望伙伴给礼物的概率，一般伙伴和稀有伙伴:<br>其实四叶草也还是有点用的，可以尝试改一改<br><img src="http://upload-images.jianshu.io/upload_images/1800415-45a361f6e093761d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1800415-1934720680ac9e22.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>这里貌似定义了青蛙的休息时间之类的，也可以尝试尝试，但也许会出现不可预知的问题<br><img src="http://upload-images.jianshu.io/upload_images/1800415-a6468147ec4781b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>血量，旅行时间拍摄时间啥的。。。。啧啧啧，改完你的蛙就是旅行达人了，不过逻辑复杂说不定会出现未知的状况就没继续探究了<br><img src="http://upload-images.jianshu.io/upload_images/1800415-56e3cede88fea12b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>然后是打包与签名：<br>解包和打包用的apktool.jar:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apktool.jar d apkfile.apk</span><br><span class="line">apktool.jar b path</span><br></pre></td></tr></table></figure></p>
-<p>签名用的signapk.jar，密钥找了个现成的:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">signapk.jar pubkey selfkey signapk.apk signed.apk</span><br></pre></td></tr></table></figure></p>
-<p>所以全程是解包–修改–打包–签名–安装，缺一不可，工具还有更详细用法还是自行百度吧，或者留言私信我啥的，虽然并不一定能及时看到，看到也并不一定回：）<br>以上  </p>
-<p>参考：<br><a href="http://gslab.qq.com/article-396-1.html" target="_blank" rel="noopener">http://gslab.qq.com/article-396-1.html</a><br><a href="https://paper.seebug.org/519/" target="_blank" rel="noopener">https://paper.seebug.org/519/</a><br>(本文大部分为原创，转载请注明出处谢谢)</p>
-
+          <h4 id="来自纯新手的手把手实践经验分享"><a href="#来自纯新手的手把手实践经验分享" class="headerlink" title="来自纯新手的手把手实践经验分享"></a>来自纯新手的手把手实践经验分享</h4><p><strong>初次</strong>接触逆向，简单记录一下心路历程及一些自认为有趣的东西，大佬们可绕过或者多多指教<br>==这里用的是1.04版本，1.01版本基本雷同==<br>
+          <p>
+            <a href="/2018/02/09/旅行青蛙的游玩心得/">
+              Read More
+            </a>
+          </p>
         
       </div>
     </div>

