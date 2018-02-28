@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    模块，搜索路径，__name__=&#39;__main__&#39;
+  
+</title>
+
+<meta name="description" content="模块，__name__=’__main__’__name__=’__main__’说人话就是，只有名字是main的时候才运行场景：在模块进行测试时：e.g.一个程序包含一个主程序和一个模块：   12主函数：calc.py  模块：TemperatureConvert.py calc.py1234567import TemperatureConvert as tcprint(&amp;quot;32 c">
+<meta name="keywords" content="py,学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模块，搜索路径，__name__=&#39;__main__&#39;">
+<meta property="og:url" content="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/05/30/模块，搜索路径，__name__='__main__'/index.html">
+<meta property="og:site_name" content="C&#39;s LOG">
+<meta property="og:description" content="模块，__name__=’__main__’__name__=’__main__’说人话就是，只有名字是main的时候才运行场景：在模块进行测试时：e.g.一个程序包含一个主程序和一个模块：   12主函数：calc.py  模块：TemperatureConvert.py calc.py1234567import TemperatureConvert as tcprint(&amp;quot;32 c">
+<meta property="og:locale" content="any">
+<meta property="og:updated_time" content="2018-02-28T07:44:04.144Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模块，搜索路径，__name__=&#39;__main__&#39;">
+<meta name="twitter:description" content="模块，__name__=’__main__’__name__=’__main__’说人话就是，只有名字是main的时候才运行场景：在模块进行测试时：e.g.一个程序包含一个主程序和一个模块：   12主函数：calc.py  模块：TemperatureConvert.py calc.py1234567import TemperatureConvert as tcprint(&amp;quot;32 c">
+<meta name="twitter:creator" content="@None">
+<link rel="publisher" href="None">
+<meta property="fb:admins" content="None">
+<meta property="fb:app_id" content="None">
+
+
+  <link rel="alternative" href="/" title="C&#39;s LOG" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">C&#39;s LOG</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">C&#39;s LOG</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">JackyTsuuuy</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/about/"><img src="https://upload.jianshu.io/users/upload_avatars/1800415/ca1f908386ab.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">Category</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/py/">py</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技巧/">技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/逆向与二进制/">逆向与二进制</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">Tag</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/msf/">msf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/py/">py</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安卓逆向/">安卓逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境搭建/">环境搭建</a><span class="tag-list-count">3</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://www.jianshu.com/u/b91eabbc6024" title="简书" target="_blank" rel="noopener">简书</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="https://github.com/JackyTsuuuy" title="Github" target="_blank" rel="noopener">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/" title="Blog">Blog</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-模块，搜索路径，__name__=&#39;__main__&#39;" class="article article-type-post">
+  
+    <h1 class="article-header">
+      模块，搜索路径，__name__='__main__'
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2017-05-30
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/py/">py</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/py/">py</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <a id="more"></a>
+<h1 id="模块，-name-’-main-’"><a href="#模块，-name-’-main-’" class="headerlink" title="模块，__name__=’__main__’"></a>模块，__name__=’__main__’</h1><h2 id="name-’-main-’"><a href="#name-’-main-’" class="headerlink" title="__name__=’__main__’"></a>__name__=’__main__’</h2><h2 id="说人话就是，只有名字是main的时候才运行"><a href="#说人话就是，只有名字是main的时候才运行" class="headerlink" title="说人话就是，只有名字是main的时候才运行"></a>说人话就是，只有名字是main的时候才运行</h2><h4 id="场景："><a href="#场景：" class="headerlink" title="场景："></a>场景：</h4><p>在模块进行测试时：<br>e.g.一个程序包含一个主程序和一个模块：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">主函数：calc.py  </span><br><span class="line">模块：TemperatureConvert.py</span><br></pre></td></tr></table></figure>
+<p><strong>calc.py</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import TemperatureConvert as tc</span><br><span class="line"></span><br><span class="line">print(&quot;32 cel = %.2f fah&quot; % tc.c2f(32))</span><br><span class="line">print(&quot;99 fah = %.2f cel&quot; % tc.f2c(99))</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">**TemperatureConvert.py**</span><br></pre></td></tr></table></figure></p>
+<p>def c2f(cel):<br>    fah = cel * 1.8 + 32<br>    return fah</p>
+<p>def f2c(fah):<br>    cel = (fah - 32) / 1.8<br>    return cel</p>
+<p>def test():<br>    print(“单独模块测试，0摄氏度 = %.2f华氏度”%c2f(0));<br>    print(“单独模块测试，0华氏度 = %.2f摄氏度”%f2c(0));</p>
+<p>test()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">此时如果执行calc.py也会同时执行TemperatureConvert.py中的测试内容test(),这里可以看到calc.py的\_\_name__是\_\_main__,而TemperatureConvert.py的的\_\_name__是\_\_TemperatureConvert__</span><br></pre></td></tr></table></figure>
+<p>===== RESTART: \calc.py =====<br>单独模块测试，0摄氏度 = 32.00华氏度<br>单独模块测试，0华氏度 = -17.78摄氏度<br>32 cel = 89.60 fah<br>99 fah = 37.22 cel</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>name</strong><br>‘<strong>main</strong>‘<br>tc.<strong>name</strong><br>‘TemperatureConvert’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">所以这里修改TemperatureConvert.py:</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>def c2f(cel):<br>    fah = cel * 1.8 + 32<br>    return fah</p>
+<p>def f2c(fah):<br>    cel = (fah - 32) / 1.8<br>    return cel</p>
+<p>def test():<br>    print(“单独模块测试，0摄氏度 = %.2f华氏度”%c2f(0));<br>    print(“单独模块测试，0华氏度 = %.2f摄氏度”%f2c(0));</p>
+<p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    test()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">再执行calc.py就不会有测试代码被执行了</span><br></pre></td></tr></table></figure>
+<p>===== RESTART: C:\Users\ad\PycharmProjects\learning\module_learn\calc.py =====<br>32 cel = 89.60 fah<br>99 fah = 37.22 cel<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"># 搜索路径  </span><br><span class="line">### 关于模块的位置： </span><br><span class="line"></span><br><span class="line">1.一般在同一文件夹下就可以直接导入了  </span><br><span class="line">#### 2.如果不在同一文件夹下。。。  </span><br><span class="line">**从搜索路径中找：**  </span><br><span class="line">比如使用sys.path就可以看到我本机的搜索路径</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import sys<br>sys.path<br>[‘C:\Users\ad\PycharmProjects\learning\module_learn’, ‘C:\Users\ad\AppData\Local\Programs\Python\Python35\lib\site-packages\easygui-0.98.0_unreleased-py3.5.egg’, ‘C:\Users\ad\AppData\Local\Programs\Python\Python35\python35.zip’, ‘C:\Users\ad\AppData\Local\Programs\Python\Python35\DLLs’, ‘C:\Users\ad\AppData\Local\Programs\Python\Python35\lib’, ‘C:\Users\ad\AppData\Local\Programs\Python\Python35’, ‘C:\Users\ad\AppData\Local\Programs\Python\Python35\lib\site-packages’]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">这里会自然引入包的概念  </span><br><span class="line">“包”简单理解就是把模块放到文件夹里  </span><br><span class="line">**包创建**  </span><br><span class="line">1.创建一个文件夹，存放相关模块，包名及文件夹名  </span><br><span class="line">2.文件夹中创建一个\_\_init\_\_.py的文件，可为空,告诉python这是个包和其他妖艳贱货的文件夹不一样  </span><br><span class="line">3.相关模块放进去  </span><br><span class="line">e.g.上一个例子</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>from t import TemperatureConvert as tc</p>
+<h1 id="或者import-t-TemperatureConvert-as-tc"><a href="#或者import-t-TemperatureConvert-as-tc" class="headerlink" title="或者import t.TemperatureConvert as tc"></a>或者import t.TemperatureConvert as tc</h1><p>print(“32 cel = %.2f fah” % tc.c2f(32))<br>print(“99 fah = %.2f cel” % tc.f2c(99))<br><code>`</code></p>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.a" target="_blank" title="Attribution-ShareAlike">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2018 C&#39;s LOG - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

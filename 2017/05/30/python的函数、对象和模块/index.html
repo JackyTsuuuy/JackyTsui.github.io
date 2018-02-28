@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    python的函数、对象和模块
+  
+</title>
+
+<meta name="description" content="python的函数、对象和模块函数def function():     print() 调用时会从当前代码往上找 函数文档：    格式：函数名.doc e.g显示print函数的函数文档print.doc 形参实参收集参数：参数前加号：param def test(*params):    print(len(params))    print(params[1]) test(1,aa,3)">
+<meta name="keywords" content="py,学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python的函数、对象和模块">
+<meta property="og:url" content="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/05/30/python的函数、对象和模块/index.html">
+<meta property="og:site_name" content="C&#39;s LOG">
+<meta property="og:description" content="python的函数、对象和模块函数def function():     print() 调用时会从当前代码往上找 函数文档：    格式：函数名.doc e.g显示print函数的函数文档print.doc 形参实参收集参数：参数前加号：param def test(*params):    print(len(params))    print(params[1]) test(1,aa,3)">
+<meta property="og:locale" content="any">
+<meta property="og:updated_time" content="2018-02-28T07:44:04.144Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python的函数、对象和模块">
+<meta name="twitter:description" content="python的函数、对象和模块函数def function():     print() 调用时会从当前代码往上找 函数文档：    格式：函数名.doc e.g显示print函数的函数文档print.doc 形参实参收集参数：参数前加号：param def test(*params):    print(len(params))    print(params[1]) test(1,aa,3)">
+<meta name="twitter:creator" content="@None">
+<link rel="publisher" href="None">
+<meta property="fb:admins" content="None">
+<meta property="fb:app_id" content="None">
+
+
+  <link rel="alternative" href="/" title="C&#39;s LOG" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">C&#39;s LOG</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">C&#39;s LOG</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">JackyTsuuuy</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/about/"><img src="https://upload.jianshu.io/users/upload_avatars/1800415/ca1f908386ab.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">Category</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/py/">py</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技巧/">技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/逆向与二进制/">逆向与二进制</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">Tag</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/msf/">msf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/py/">py</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安卓逆向/">安卓逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境搭建/">环境搭建</a><span class="tag-list-count">3</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://www.jianshu.com/u/b91eabbc6024" title="简书" target="_blank" rel="noopener">简书</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="https://github.com/JackyTsuuuy" title="Github" target="_blank" rel="noopener">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/" title="Blog">Blog</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-python的函数、对象和模块" class="article article-type-post">
+  
+    <h1 class="article-header">
+      python的函数、对象和模块
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2017-05-30
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/py/">py</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/py/">py</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <a id="more"></a>
+<h2 id="python的函数、对象和模块"><a href="#python的函数、对象和模块" class="headerlink" title="python的函数、对象和模块"></a>python的函数、对象和模块</h2><h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p><code>def function():
+    print()</code></p>
+<p>调用时会从当前代码往上找</p>
+<p>函数文档：<br>    格式：函数名.<strong>doc</strong></p>
+<p>e.g<br>显示print函数的函数文档<br>print.<strong>doc</strong></p>
+<p>形参<br>实参<br>收集参数：参数前加<em>号：</em>param</p>
+<p>def test(*params):<br>    print(len(params))<br>    print(params[1])</p>
+<p>test(1,aa,3)</p>
+<p>如print方法中的参数，本身就是收集参数</p>
+<p>返回值：<br>一般来说，有返回值是函数，没返回值是过程  </p>
+<p>但python严格来讲只有函数，在不写返回值的时候返回None<br>可返回多个值，比如用一个列表：<br>return[1,’a’,2]<br>直接用逗号分隔，会返回元组：<br>return 1，2，3  </p>
+<p><strong>全局变量:</strong><br>作用于整个文件<br>只可在函数内读取<br>若在某函数内修改全局变量相当于在局部重新创建了一个同名局部变量<br>若在函数内修改全局变量，需用globle定义：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def fun():  </span><br><span class="line">    globle variable  </span><br><span class="line">    variable = 10</span><br></pre></td></tr></table></figure>
+<p><strong>内嵌函数(内部函数)：</strong><br>函数内创建另一个函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def fun1():</span><br><span class="line">    print(fun1)</span><br><span class="line">    def fun2():</span><br><span class="line">        print(fun2)</span><br></pre></td></tr></table></figure></p>
+<p><strong>闭包:</strong><br>在一个内部函数里对外部作用域（非全局）的变量进行了引用，该内部函数就叫闭包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def funX(x):</span><br><span class="line">...     def funY(y):</span><br><span class="line">...         return x*y</span><br><span class="line">...     return funY</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; i = funX(2)</span><br><span class="line">&gt;&gt;&gt; i</span><br><span class="line">&lt;function funY at 0x03509770&gt;</span><br><span class="line">&gt;&gt;&gt; type(i)</span><br><span class="line">&lt;type &apos;function&apos;&gt;</span><br><span class="line">&gt;&gt;&gt; i(5)</span><br><span class="line">10</span><br><span class="line">&gt;&gt;&gt; funX(2)(5)</span><br><span class="line">10</span><br><span class="line">&gt;&gt;&gt; funY(5)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">NameError: name &apos;funY&apos; is not defined</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;&gt;&gt; def fun1():</span><br><span class="line">...     x = 5</span><br><span class="line">...     def fun2():</span><br><span class="line">...         x *= x</span><br><span class="line">...         return x</span><br><span class="line">...     return fun2()</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; fun1()</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 6, in fun1</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 4, in fun2</span><br><span class="line">UnboundLocalError: local variable &apos;x&apos; referenced before assignment</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">因为列表不放在栈里，所以这里换成列表就没问题</span><br><span class="line">&gt;&gt;&gt; def fun1():</span><br><span class="line">...     x = [5]</span><br><span class="line">...     def fun2():</span><br><span class="line">...         x[0] *= x[0]</span><br><span class="line">...         return x[0]</span><br><span class="line">...     return fun2()</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; fun1()</span><br><span class="line">25</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">但是在python3里可以使用nonlocal关键字来表明该变量非本地变量：  </span><br><span class="line">&gt;&gt;&gt; def fun1():</span><br><span class="line">...     x = 5</span><br><span class="line">...     def fun2():</span><br><span class="line">...         nonlocal x</span><br><span class="line">...         x *= x</span><br><span class="line">...         return x</span><br><span class="line">...     return fun2()</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; fun1()</span><br><span class="line">25</span><br></pre></td></tr></table></figure>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.a" target="_blank" title="Attribution-ShareAlike">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2018 C&#39;s LOG - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>
