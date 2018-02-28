@@ -12,18 +12,18 @@
   
 </title>
 
-<meta name="description" content="python中的递归递归说白了就是。。。自交，自己调用自己满足条件：1.调用函数自身2.设置了自身正确的返回值   e.g.求五的阶乘12345678def fac(n):    if n == 1:        return 1    else:        return n * fac(n-1)num = input(&amp;apos;input a number&amp;apos;)print(fa">
+<meta name="description" content="python中的递归学习笔记">
 <meta name="keywords" content="py,学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python中的递归">
 <meta property="og:url" content="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/05/30/python中的递归/index.html">
 <meta property="og:site_name" content="C&#39;s LOG">
-<meta property="og:description" content="python中的递归递归说白了就是。。。自交，自己调用自己满足条件：1.调用函数自身2.设置了自身正确的返回值   e.g.求五的阶乘12345678def fac(n):    if n == 1:        return 1    else:        return n * fac(n-1)num = input(&amp;apos;input a number&amp;apos;)print(fa">
+<meta property="og:description" content="python中的递归学习笔记">
 <meta property="og:locale" content="any">
-<meta property="og:updated_time" content="2018-02-28T07:44:04.144Z">
+<meta property="og:updated_time" content="2018-02-28T07:52:38.736Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python中的递归">
-<meta name="twitter:description" content="python中的递归递归说白了就是。。。自交，自己调用自己满足条件：1.调用函数自身2.设置了自身正确的返回值   e.g.求五的阶乘12345678def fac(n):    if n == 1:        return 1    else:        return n * fac(n-1)num = input(&amp;apos;input a number&amp;apos;)print(fa">
+<meta name="twitter:description" content="python中的递归学习笔记">
 <meta name="twitter:creator" content="@None">
 <link rel="publisher" href="None">
 <meta property="fb:admins" content="None">
@@ -88,21 +88,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">Category</a>
+                <a href="javascript:;">分类</a>
                 <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/py/">py</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技巧/">技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/逆向与二进制/">逆向与二进制</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
+                <a href="javascript:;">标签</a>
                 <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/msf/">msf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/py/">py</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安卓逆向/">安卓逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境搭建/">环境搭建</a><span class="tag-list-count">3</span></li></ul>
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
+                <a href="javascript:;">归档</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
@@ -182,7 +182,7 @@
 
   </div>
   <div class="article-entry">
-    <a id="more"></a>
+    <h2 id="python中的递归学习笔记"><a href="#python中的递归学习笔记" class="headerlink" title="python中的递归学习笔记"></a>python中的递归学习笔记</h2><a id="more"></a>
 <h2 id="python中的递归"><a href="#python中的递归" class="headerlink" title="python中的递归"></a>python中的递归</h2><p>递归说白了就是。。。自交，自己调用自己<br>满足条件：<br>1.调用函数自身<br>2.设置了自身正确的返回值  </p>
 <p>e.g.<br>求五的阶乘<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def fac(n):</span><br><span class="line">    if n == 1:</span><br><span class="line">        return 1</span><br><span class="line">    else:</span><br><span class="line">        return n * fac(n-1)</span><br><span class="line"></span><br><span class="line">num = input(&apos;input a number&apos;)</span><br><span class="line">print(fac(int(num)))</span><br></pre></td></tr></table></figure></p>
 <p>e.g.<br>斐波那契数列<br>n = 1,n = 2,f(n) = 1<br>n &gt; 2 ,f(n) = f(n-1) + f(n-2)<br>一般：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def feb(n):</span><br><span class="line">    n1 = 1</span><br><span class="line">    n2 = 1</span><br><span class="line">    n3 = 1</span><br><span class="line">    if n &lt; 1:</span><br><span class="line">        print(&apos;illegle number&apos;)</span><br><span class="line">    while (n-2) &gt; 0:</span><br><span class="line">        n3 = n1 + n2</span><br><span class="line">        n1 = n2</span><br><span class="line">        n2 = n3</span><br><span class="line">        n -= 1</span><br><span class="line">    return n3</span><br><span class="line"></span><br><span class="line">num = int(input(&apos;input a num:\n&apos;))</span><br><span class="line">print(feb(num))</span><br></pre></td></tr></table></figure></p>
@@ -192,7 +192,7 @@
   <footer class="article-footer">
     
   <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.a" target="_blank" title="Attribution-ShareAlike">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.a" target="_blank" title="署名-相同方式共享">
       <img src="/images/cc/cc.png">
       
           <img src="/images/cc/by.png">
@@ -200,7 +200,7 @@
           <img src="/images/cc/sa.png">
       
       <span>
-        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
       </span>
     </a>
   </div>

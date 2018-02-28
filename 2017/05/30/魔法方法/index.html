@@ -12,18 +12,18 @@
   
 </title>
 
-<meta name="description" content="魔法方法init(self[,…])对一个对象进行初始化，返回none   new(cls[,…])对象实例化时调用的第一个方法，并非init,第一个参数不是self，而是class，后面的参数会原封不动传给init。一般只有在继承一个不可变类型，但又需对其进行修改时使用，比如str-&amp;gt;大写的str。12345678910111213&amp;gt;&amp;gt;&amp;gt; class CapStr(st">
+<meta name="description" content="魔法方法学习笔记">
 <meta name="keywords" content="py,学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="魔法方法">
 <meta property="og:url" content="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/05/30/魔法方法/index.html">
 <meta property="og:site_name" content="C&#39;s LOG">
-<meta property="og:description" content="魔法方法init(self[,…])对一个对象进行初始化，返回none   new(cls[,…])对象实例化时调用的第一个方法，并非init,第一个参数不是self，而是class，后面的参数会原封不动传给init。一般只有在继承一个不可变类型，但又需对其进行修改时使用，比如str-&amp;gt;大写的str。12345678910111213&amp;gt;&amp;gt;&amp;gt; class CapStr(st">
+<meta property="og:description" content="魔法方法学习笔记">
 <meta property="og:locale" content="any">
-<meta property="og:updated_time" content="2018-02-28T07:44:04.144Z">
+<meta property="og:updated_time" content="2018-02-28T07:52:38.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="魔法方法">
-<meta name="twitter:description" content="魔法方法init(self[,…])对一个对象进行初始化，返回none   new(cls[,…])对象实例化时调用的第一个方法，并非init,第一个参数不是self，而是class，后面的参数会原封不动传给init。一般只有在继承一个不可变类型，但又需对其进行修改时使用，比如str-&amp;gt;大写的str。12345678910111213&amp;gt;&amp;gt;&amp;gt; class CapStr(st">
+<meta name="twitter:description" content="魔法方法学习笔记">
 <meta name="twitter:creator" content="@None">
 <link rel="publisher" href="None">
 <meta property="fb:admins" content="None">
@@ -88,21 +88,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">Category</a>
+                <a href="javascript:;">分类</a>
                 <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/py/">py</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技巧/">技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/逆向与二进制/">逆向与二进制</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
+                <a href="javascript:;">标签</a>
                 <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/msf/">msf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/py/">py</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安卓逆向/">安卓逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境搭建/">环境搭建</a><span class="tag-list-count">3</span></li></ul>
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
+                <a href="javascript:;">归档</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
@@ -182,7 +182,7 @@
 
   </div>
   <div class="article-entry">
-    <a id="more"></a>
+    <h2 id="魔法方法学习笔记"><a href="#魔法方法学习笔记" class="headerlink" title="魔法方法学习笔记"></a>魔法方法学习笔记</h2><a id="more"></a>
 <h1 id="魔法方法"><a href="#魔法方法" class="headerlink" title="魔法方法"></a>魔法方法</h1><p><strong><strong>init</strong>(self[,…])</strong><br>对一个对象进行初始化，返回none  </p>
 <p><strong><strong>new</strong>(cls[,…])</strong><br>对象实例化时调用的第一个方法，并非<strong>init</strong>,第一个参数不是self，而是class，后面的参数会原封不动传给<strong>init</strong>。一般只有在继承一个不可变类型，但又需对其进行修改时使用，比如str-&gt;大写的str。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; class CapStr(str):</span><br><span class="line">	def __new__(cls,string):</span><br><span class="line">		string = string.upper()</span><br><span class="line">		return str.__new__(cls,string)</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">&gt;&gt;&gt; a = CapStr(&quot;test&quot;)</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">&apos;TEST&apos;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">**__del__(self)**  </span><br><span class="line">垃圾回收</span><br></pre></td></tr></table></figure></p>
 <blockquote>
@@ -206,7 +206,7 @@
   <footer class="article-footer">
     
   <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.a" target="_blank" title="Attribution-ShareAlike">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.a" target="_blank" title="署名-相同方式共享">
       <img src="/images/cc/cc.png">
       
           <img src="/images/cc/by.png">
@@ -214,7 +214,7 @@
           <img src="/images/cc/sa.png">
       
       <span>
-        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
       </span>
     </a>
   </div>

@@ -8,7 +8,7 @@
 
 <title>
   
-    Archive: 2017/5
+    归档: 2017/5
   
 </title>
 
@@ -83,21 +83,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">Category</a>
+                <a href="javascript:;">分类</a>
                 <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/py/">py</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技巧/">技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/逆向与二进制/">逆向与二进制</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
+                <a href="javascript:;">标签</a>
                 <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/msf/">msf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/py/">py</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安卓逆向/">安卓逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境搭建/">环境搭建</a><span class="tag-list-count">3</span></li></ul>
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
+                <a href="javascript:;">归档</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
@@ -167,15 +167,15 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2017/05/30/Python执行系统命令的方法 /" >
-  Python执行系统命令的方法
+        <a href="/2017/05/30/生成器/" >
+  生成器
 </a>
 
       </h3>
       
 
       <div class="article-info">
-        <a href="/2017/05/30/Python执行系统命令的方法 /"><span class="article-date">
+        <a href="/2017/05/30/生成器/"><span class="article-date">
   2017-05-30
 </span>
 </a>
@@ -194,162 +194,12 @@
       </div>
       <div class="article-entry">
         
-          <a id="more"></a>
-<h1 id="Python执行系统命令的方法"><a href="#Python执行系统命令的方法" class="headerlink" title="Python执行系统命令的方法"></a>Python执行系统命令的方法</h1><p><a href="http://www.linux-field.com/?p=15" target="_blank" rel="noopener">http://www.linux-field.com/?p=15</a>  </p>
-<h3 id="Python中执行系统命令常见方法有两种："><a href="#Python中执行系统命令常见方法有两种：" class="headerlink" title="Python中执行系统命令常见方法有两种："></a>Python中执行系统命令常见方法有两种：</h3><p>两者均需 import os  </p>
-<h4 id="1-os-system"><a href="#1-os-system" class="headerlink" title="(1) os.system"></a>(1) os.system</h4><p>#仅仅在一个子终端运行系统命令，而不能获取命令执行后的返回信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">system(command) -&gt; exit_status</span><br><span class="line">Execute the command (a string) in a subshell.</span><br></pre></td></tr></table></figure></p>
-<p>#如果再命令行下执行，结果直接打印出来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 &gt;&gt;&gt; os.system(&apos;ls&apos;)</span><br><span class="line">2 04101419778.CHM   bash      document    media      py-django   video</span><br><span class="line">3 11.wmv            books     downloads   Pictures  python</span><br><span class="line">4 all-20061022      Desktop   Examples    project    tools</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-os-popen"><a href="#2-os-popen" class="headerlink" title="(2) os.popen"></a>(2) os.popen</h4><p>#该方法不但执行命令还返回执行后的信息对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">popen(command [, mode=&apos;r&apos; [, bufsize]]) -&gt; pipe</span><br><span class="line">Open a pipe to/from a command returning a file object.</span><br></pre></td></tr></table></figure></p>
-<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">01 &gt;&gt;&gt;tmp = os.popen(&apos;ls *.py&apos;).readlines()</span><br><span class="line">02 &gt;&gt;&gt;tmp</span><br><span class="line">03 Out[21]:</span><br><span class="line">04 [&apos;dump_db_pickle.py &apos;,</span><br><span class="line">05 &apos;dump_db_pickle_recs.py &apos;,</span><br><span class="line">06 &apos;dump_db_shelve.py &apos;,</span><br><span class="line">07 &apos;initdata.py &apos;,</span><br><span class="line">08 &apos;__init__.py &apos;,</span><br><span class="line">09 &apos;make_db_pickle.py &apos;,</span><br><span class="line">10 &apos;make_db_pickle_recs.py &apos;,</span><br><span class="line">11 &apos;make_db_shelve.py &apos;,</span><br><span class="line">12 &apos;peopleinteract_query.py &apos;,</span><br><span class="line">13 &apos;reader.py &apos;,</span><br><span class="line">14 &apos;testargv.py &apos;,</span><br><span class="line">15 &apos;teststreams.py &apos;,</span><br><span class="line">16 &apos;update_db_pickle.py &apos;,</span><br><span class="line">17 &apos;writer.py &apos;]</span><br></pre></td></tr></table></figure></p>
-<p>好处在于：将返回的结果赋于一变量，便于程序的处理。  </p>
-<h4 id="3-使用模块subprocess"><a href="#3-使用模块subprocess" class="headerlink" title="(3)  使用模块subprocess"></a>(3)  使用模块subprocess</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 &gt;&gt;&gt; import subprocess</span><br><span class="line">2 &gt;&gt;&gt; subprocess.call ([&quot;cmd&quot;, &quot;arg1&quot;, &quot;arg2&quot;],shell=True)</span><br></pre></td></tr></table></figure>
-<p>获取返回和输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1 import subprocess</span><br><span class="line">2 p = subprocess.Popen(&apos;ls&apos;, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)</span><br><span class="line">3 for line in p.stdout.readlines():</span><br><span class="line">4     print line,</span><br><span class="line">5 retval = p.wait()</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">#### (4)  使用模块commands模块</span><br></pre></td></tr></table></figure></p>
-<p>1 &gt;&gt;&gt; import commands<br>2 &gt;&gt;&gt; dir(commands)<br>3 [‘<strong>all</strong>‘, ‘<strong>builtins</strong>‘, ‘<strong>doc</strong>‘, ‘<strong>file</strong>‘, ‘<strong>name</strong>‘, ‘getoutput’, ‘getstatus’,’getstatusoutput’, ‘mk2arg’, ‘mkarg’]<br>4 &gt;&gt;&gt; commands.getoutput(“date”)<br>5 ‘Wed Jun 10 19:39:57 CST 2009’<br>6 &gt;&gt;&gt;<br>7 &gt;&gt;&gt; commands.getstatusoutput(“date”)<br>8 (0, ‘Wed Jun 10 19:40:41 CST 2009’)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意： 当执行命令的参数或者返回中包含了中文文字，那么建议使用subprocess，如果使用os.popen则会出现下面的错误:</span><br></pre></td></tr></table></figure></p>
-<p>1 Traceback (most recent call last):<br>2   File “./test1.py”, line 56, in <module><br>3     main()<br>4   File “./test1.py”, line 45, in main<br>5     fax.sendFax()<br>6   File “./mailfax/Fax.py”, line 13, in sendFax<br>7     os.popen(cmd)<br>8 UnicodeEncodeError: ‘ascii’ codec can’t encode characters in position 46-52: ordinal not inrange(128)<br><code>`</code><br>关于本文更多的延伸阅读地址：<br><a href="http://zh-cn.how-to.mobi/index.php?id=89228" target="_blank" rel="noopener">http://zh-cn.how-to.mobi/index.php?id=89228</a><br><a href="http://www.javaeye.com/topic/406623" target="_blank" rel="noopener">http://www.javaeye.com/topic/406623</a></module></p>
-
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/05/30/魔法方法：属性访问/" >
-  魔法方法：属性访问
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/05/30/魔法方法：属性访问/"><span class="article-date">
-  2017-05-30
-</span>
-</a>
-        
-	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/py/">py</a></li></ul>
-	</span>
-
-
-        
-	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/py/">py</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
-	</span>
-
-
-      </div>
-      <div class="article-entry">
-        
-          <a id="more"></a>
-<h1 id="魔法方法：属性访问"><a href="#魔法方法：属性访问" class="headerlink" title="魔法方法：属性访问"></a>魔法方法：属性访问</h1><h2 id="属性访问的方法"><a href="#属性访问的方法" class="headerlink" title="属性访问的方法"></a>属性访问的方法</h2><p><strong>1.使用getattr()</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; class C:</span><br><span class="line">	def __init__(self):</span><br><span class="line">		self.x = &apos;test&apos;</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">&gt;&gt;&gt; c = C()</span><br><span class="line">&gt;&gt;&gt; c.x</span><br><span class="line">&apos;test&apos;</span><br><span class="line">&gt;&gt;&gt; getattr(c,&apos;x&apos;,&apos;cant get this attr&apos;)</span><br><span class="line">&apos;test&apos;</span><br><span class="line">&gt;&gt;&gt; getattr(c,&apos;y&apos;,&apos;cant get this attr&apos;)</span><br><span class="line">&apos;cant get this attr&apos;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">**2.使用property()**</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>class C:<br>    def <strong>init</strong>(self,size=10):<br>        self.size = size<br>    def getSize(self):<br>        return self.size<br>    def setSize(self,value):<br>        self.size = value<br>    def delSize(self):<br>        del self.size<br>    x = property(getSize,setSize,delSize)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>c = C()<br>c.size<br>10<br>c.x = 13<br>c.x<br>13<br>c.size<br>13<br>del c.x<br>c.size<br>Traceback (most recent call last):<br>  File “&lt;pyshell#28&gt;”, line 1, in <module><br>    c.size<br>AttributeError: ‘C’ object has no attribute ‘size’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 属性访问的魔法方法  </span><br><span class="line">__getattr__(self,name)  </span><br><span class="line">定义当用户试图获取一个不存在的属性时的行为  </span><br><span class="line">__getattribute(self,name)  </span><br><span class="line">定义当该类的属性被访问时的行为  </span><br><span class="line">__setattr__(self,name,value)  </span><br><span class="line">定义当一个属性被设置时的行为,name赋值左边的那个，value赋值右边的那个    </span><br><span class="line">__delattr__(self,name)  </span><br><span class="line">定义一个属性被删除时的行为</span><br></pre></td></tr></table></figure></module></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>class C:<br>    def <strong>getattribute</strong>(self,name):<br>        print(“getattribute”)<br>        return super().<strong>getattribute</strong>(name)<br>    def <strong>getattr</strong>(self,name):<br>        print(“getattr”)<br>    def <strong>setattr</strong>(self,name,value):<br>        print(“setattr”)<br>        super().<strong>setattr</strong>(name,value)<br>    def <strong>delattr</strong>(self,name):<br>        print(“delattr”)<br>        super.<strong>delattr</strong>(name)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>c.x<br>Traceback (most recent call last):<br>  File “&lt;pyshell#60&gt;”, line 1, in <module><br>    c.x<br>NameError: name ‘c’ is not defined<br>c = C()<br>c.x<br>getattribute<br>getattr<br>c.x = 1<br>setattr<br>c.x<br>getattribute<br>1<br>del c.x<br>delattr<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e.g.</span><br></pre></td></tr></table></figure></module></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>class Rectangle:<br>    def <strong>init</strong>(self,width=0,height=0):<br>        self.width = width<br>        self.height = height</p>
-<pre><code>def __setattr__(self,name,value):
-    print(&apos;using setattr&apos;)
-    if name == &apos;square&apos;:
-        self.width = value
-        self.height = value
-    else:
-        super().__setattr__(name,value)
-        #self.__dict__[name] = value
-
-def getArea(self):
-    return self.width * self.height
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">运行结果：</span><br></pre></td></tr></table></figure>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>r = Rectangle()<br>using setattr<br>using setattr<br>r.width = 3<br>using setattr<br>r.square = 5<br>using setattr<br>using setattr<br>using setattr<br>r.bbb = 4<br>using setattr<br>r.height = 6<br>using setattr<br>r.getArea()<br>30<br>r.<strong>dict</strong><br>{‘width’: 5, ‘bbb’: 4, ‘height’: 6}<br><code>`</code></p>
-</blockquote>
-</blockquote>
-</blockquote>
-
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/05/30/魔法方法：定制序列/" >
-  魔法方法：定制序列
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/05/30/魔法方法：定制序列/"><span class="article-date">
-  2017-05-30
-</span>
-</a>
-        
-	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/py/">py</a></li></ul>
-	</span>
-
-
-        
-	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/py/">py</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
-	</span>
-
-
-      </div>
-      <div class="article-entry">
-        
-          <a id="more"></a>
-<h1 id="魔法方法：定制序列"><a href="#魔法方法：定制序列" class="headerlink" title="魔法方法：定制序列"></a>魔法方法：定制序列</h1><p>定制容器不可变，只需定义<strong>len</strong>()和<strong>getitem</strong>()<br>定制容器可变，除<strong>len</strong>()和<strong>getitem</strong>()，还需定义<strong>setitem</strong>()和<strong>delitem</strong>()  </p>
-<p><strong>len</strong>(self):返回容器中元素的个数<br><strong>getitem</strong>(self,key)：获取容器中指定元素的行为，self[key]<br><strong>setitem</strong>(self,key,value):设置容器中指定元素的行为，self[key]=value<br><strong>delitem</strong>(self,key):删除容器中指定元素的行为，del self[key]  </p>
-<p>e.g.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Countlist:</span><br><span class="line">    def __init__(self,*args):</span><br><span class="line">        # 列表推导式</span><br><span class="line">        self.values = [x for x in args]</span><br><span class="line">        self.count = &#123;&#125;.fromkeys(range(len(self.value)),0)</span><br><span class="line"></span><br><span class="line">    def __len__(self):</span><br><span class="line">        return len(self.values)</span><br><span class="line"></span><br><span class="line">    def __getitem__(self,key):</span><br><span class="line">        self.count[key] += 1</span><br><span class="line">        return self.values[key]</span><br><span class="line">```  </span><br><span class="line">运行结果</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>c = Countlist(1,2,3,4)<br>c2 = Countlist(2,4,6,8)<br>c[1]<br>2<br>c[3]<br>4<br>c.count<br>{0: 0, 1: 1, 2: 0, 3: 1}<br>c[1]+c2[3]<br>10<br>c.count<br>{0: 0, 1: 2, 2: 0, 3: 1}<br>c2.count<br>{0: 0, 1: 0, 2: 0, 3: 1}<br><code>`</code></p>
-</blockquote>
-</blockquote>
-</blockquote>
-
+          <h2 id="生成器学习笔记"><a href="#生成器学习笔记" class="headerlink" title="生成器学习笔记"></a>生成器学习笔记</h2>
+          <p>
+            <a href="/2017/05/30/生成器/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -390,72 +240,12 @@ def getArea(self):
       </div>
       <div class="article-entry">
         
-          <a id="more"></a>
-<h2 id="else"><a href="#else" class="headerlink" title="else"></a>else</h2><p>if；<br>    …<br>else:<br>    …</p>
-<p>try:<br>    …<br>except:<br>    …<br>else:<br>    …</p>
-<p><strong>with</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">	f = open(&apos;aaa.txt&apos;,&apos;w&apos;)</span><br><span class="line">	for each_line in f:</span><br><span class="line">		print(each_line)</span><br><span class="line">except Exception as reason:</span><br><span class="line">	print(&apos;Your error is :\n&apos; + str(reason))</span><br><span class="line">finally:</span><br><span class="line">	f.close()</span><br></pre></td></tr></table></figure></p>
-<p>与以下效果相同：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">	with open(&apos;aaa.txt&apos;,&apos;w&apos;) as f:</span><br><span class="line">		for each_line in f:</span><br><span class="line">			print(each_line)</span><br><span class="line">except Exception as reason:</span><br><span class="line">	print(&apos;Your error is :\n&apos; + str(reason))</span><br></pre></td></tr></table></figure></p>
-
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/05/30/魔法方法/" >
-  魔法方法
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/05/30/魔法方法/"><span class="article-date">
-  2017-05-30
-</span>
-</a>
-        
-	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/py/">py</a></li></ul>
-	</span>
-
-
-        
-	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/py/">py</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
-	</span>
-
-
-      </div>
-      <div class="article-entry">
-        
-          <a id="more"></a>
-<h1 id="魔法方法"><a href="#魔法方法" class="headerlink" title="魔法方法"></a>魔法方法</h1><p><strong><strong>init</strong>(self[,…])</strong><br>对一个对象进行初始化，返回none  </p>
-<p><strong><strong>new</strong>(cls[,…])</strong><br>对象实例化时调用的第一个方法，并非<strong>init</strong>,第一个参数不是self，而是class，后面的参数会原封不动传给<strong>init</strong>。一般只有在继承一个不可变类型，但又需对其进行修改时使用，比如str-&gt;大写的str。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; class CapStr(str):</span><br><span class="line">	def __new__(cls,string):</span><br><span class="line">		string = string.upper()</span><br><span class="line">		return str.__new__(cls,string)</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">&gt;&gt;&gt; a = CapStr(&quot;test&quot;)</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">&apos;TEST&apos;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">**__del__(self)**  </span><br><span class="line">垃圾回收</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>class C:<br>    def <strong>init</strong>(self):<br>        print(“<strong>init</strong> has been used”)<br>    def <strong>del</strong>(self):<br>        print(“<strong>del</strong> has been used”)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>c1 = C()<br><strong>init</strong> has been used<br>c2 = c1<br>c3 = c2<br>del c2<br>del c3<br>del c1<br><strong>del</strong> has been used<br><code>`</code>  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>## </p>
-<hr>
-
+          <h2 id="else与with学习笔记"><a href="#else与with学习笔记" class="headerlink" title="else与with学习笔记"></a>else与with学习笔记</h2>
+          <p>
+            <a href="/2017/05/30/else与with/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -496,9 +286,12 @@ def getArea(self):
       </div>
       <div class="article-entry">
         
-          <a id="more"></a>
-<h2 id="import-的三种方法"><a href="#import-的三种方法" class="headerlink" title="import 的三种方法"></a>import 的三种方法</h2><p>如使用easygui包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1.  </span><br><span class="line">&gt;&gt;&gt;import easygui  </span><br><span class="line">&gt;&gt;&gt;easygui.msgbox(&apos;test&apos;)</span><br><span class="line"></span><br><span class="line">2.  </span><br><span class="line">&gt;&gt;&gt;from easygui import *  </span><br><span class="line">&gt;&gt;&gt;msgbox(&apos;test&apos;)</span><br><span class="line">#会导致变量覆盖不推荐  </span><br><span class="line"></span><br><span class="line">3.  </span><br><span class="line">&gt;&gt;&gt;import easygui as g  </span><br><span class="line">&gt;&gt;&gt;g.msgbox(&apos;test&apos;)</span><br></pre></td></tr></table></figure></p>
-
+          <h2 id="import-的三种方法学习笔记"><a href="#import-的三种方法学习笔记" class="headerlink" title="import 的三种方法学习笔记"></a>import 的三种方法学习笔记</h2>
+          <p>
+            <a href="/2017/05/30/import 的三种方法  /">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -512,15 +305,15 @@ def getArea(self):
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2017/05/30/魔术方法：迭代器/" >
-  魔术方法：迭代器
+        <a href="/2017/05/30/魔法方法：属性访问/" >
+  魔法方法：属性访问
 </a>
 
       </h3>
       
 
       <div class="article-info">
-        <a href="/2017/05/30/魔术方法：迭代器/"><span class="article-date">
+        <a href="/2017/05/30/魔法方法：属性访问/"><span class="article-date">
   2017-05-30
 </span>
 </a>
@@ -539,48 +332,12 @@ def getArea(self):
       </div>
       <div class="article-entry">
         
-          <a id="more"></a>
-<h1 id="魔术方法：迭代器"><a href="#魔术方法：迭代器" class="headerlink" title="魔术方法：迭代器"></a>魔术方法：迭代器</h1><p><strong>迭代说人话就是循环 </strong><br>iter():<strong>iter</strong>()<br>next():<strong>next</strong>()  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; str = &quot;asdfsadf&quot;</span><br><span class="line">&gt;&gt;&gt; it = iter(str)</span><br><span class="line">&gt;&gt;&gt; next(it)</span><br><span class="line">&apos;a&apos;</span><br><span class="line">&gt;&gt;&gt; next(it)</span><br><span class="line">&apos;s&apos;</span><br><span class="line">&gt;&gt;&gt; next(it)</span><br><span class="line">&apos;d&apos;</span><br><span class="line">&gt;&gt;&gt; while True:</span><br><span class="line">	try :</span><br><span class="line">		each = next(it)</span><br><span class="line">	except StopIteration:</span><br><span class="line">		break</span><br><span class="line">	print(each)</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">f</span><br><span class="line">s</span><br><span class="line">a</span><br><span class="line">d</span><br><span class="line">f</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">e.g. </span><br><span class="line">self.a,self.b   =   self.b,self.a+self.b 可以理解成：</span><br><span class="line">temp_1 = self.b</span><br><span class="line">temp_2 = self.a + self.b</span><br><span class="line"></span><br><span class="line">self.a = temp_1</span><br><span class="line">self.b = temp_2</span><br><span class="line"></span><br><span class="line">斐波那契数列：</span><br></pre></td></tr></table></figure>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>class fibs:<br>    def <strong>init</strong>(self):<br>        self.a = 0<br>        self.b = 1<br>    def <strong>iter</strong>(self):<br>        return self<br>    def <strong>next</strong>(self):<br>        self.a,self.b  =  self.b,self.a+self.b<br>        return self.a</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>f = fibs()<br>for each in f:<br>    if each &lt; 50:<br>        print(each)<br>    else:<br>        break</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>1<br>1<br>2<br>3<br>5<br>8<br>13<br>21<br>34<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">改良：</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>class fibs:<br>    def <strong>init</strong>(self,n=50):<br>        self.a = 0<br>        self.b = 1<br>        self.n = n<br>    def <strong>iter</strong>(self):<br>        return self<br>    def <strong>next</strong>(self):<br>        self.a,self.b  =  self.b,self.a+self.b<br>        if self.a &gt; self.n:<br>            raise StopIteration<br>        return self.a</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>f = fibs()<br>for each in f:<br>    print(each)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>1<br>1<br>2<br>3<br>5<br>8<br>13<br>21<br>34</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>f = fibs(100)<br>for each in f:<br>    print(each)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>1<br>1<br>2<br>3<br>5<br>8<br>13<br>21<br>34<br>55<br>89<br><code>`</code></p>
-
+          <h2 id="魔法方法：属性访问学习笔记"><a href="#魔法方法：属性访问学习笔记" class="headerlink" title="魔法方法：属性访问学习笔记"></a>魔法方法：属性访问学习笔记</h2>
+          <p>
+            <a href="/2017/05/30/魔法方法：属性访问/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -621,12 +378,12 @@ def getArea(self):
       </div>
       <div class="article-entry">
         
-          <a id="more"></a>
-<h2 id="python中的递归"><a href="#python中的递归" class="headerlink" title="python中的递归"></a>python中的递归</h2><p>递归说白了就是。。。自交，自己调用自己<br>满足条件：<br>1.调用函数自身<br>2.设置了自身正确的返回值  </p>
-<p>e.g.<br>求五的阶乘<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def fac(n):</span><br><span class="line">    if n == 1:</span><br><span class="line">        return 1</span><br><span class="line">    else:</span><br><span class="line">        return n * fac(n-1)</span><br><span class="line"></span><br><span class="line">num = input(&apos;input a number&apos;)</span><br><span class="line">print(fac(int(num)))</span><br></pre></td></tr></table></figure></p>
-<p>e.g.<br>斐波那契数列<br>n = 1,n = 2,f(n) = 1<br>n &gt; 2 ,f(n) = f(n-1) + f(n-2)<br>一般：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def feb(n):</span><br><span class="line">    n1 = 1</span><br><span class="line">    n2 = 1</span><br><span class="line">    n3 = 1</span><br><span class="line">    if n &lt; 1:</span><br><span class="line">        print(&apos;illegle number&apos;)</span><br><span class="line">    while (n-2) &gt; 0:</span><br><span class="line">        n3 = n1 + n2</span><br><span class="line">        n1 = n2</span><br><span class="line">        n2 = n3</span><br><span class="line">        n -= 1</span><br><span class="line">    return n3</span><br><span class="line"></span><br><span class="line">num = int(input(&apos;input a num:\n&apos;))</span><br><span class="line">print(feb(num))</span><br></pre></td></tr></table></figure></p>
-<p>递归：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def feb(n):</span><br><span class="line">    if 0 &lt; n &lt;= 2:</span><br><span class="line">        return 1</span><br><span class="line">    if 2 &lt; n:</span><br><span class="line">        return feb(n-1) + feb(n-2)</span><br><span class="line">    else:</span><br><span class="line">        print(&apos;wrong input&apos;)</span><br><span class="line"></span><br><span class="line">num = int(input(&apos;input a num&apos;))</span><br><span class="line">print(feb(num))</span><br></pre></td></tr></table></figure></p>
-
+          <h2 id="python中的递归学习笔记"><a href="#python中的递归学习笔记" class="headerlink" title="python中的递归学习笔记"></a>python中的递归学习笔记</h2>
+          <p>
+            <a href="/2017/05/30/python中的递归/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -667,13 +424,12 @@ def getArea(self):
       </div>
       <div class="article-entry">
         
-          <a id="more"></a>
-<h2 id="python文件"><a href="#python文件" class="headerlink" title="python文件"></a>python文件</h2><p>两种格式：文本和二进制<br>f.open()<br>f.close()<br>f.read()<br>f.readline()<br>f.write()<br>f.writeline()<br>f.tell()<br>f.seak(offset,from)在文件中移动指针从from移动offset个字节  </p>
-<p><strong>e.g.</strong><br>split():<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; str1 = &apos;aaa:bbbbbb&apos;</span><br><span class="line">&gt;&gt;&gt; (front,end) = str1.split(&apos;:&apos;)</span><br><span class="line">&gt;&gt;&gt; front</span><br><span class="line">&apos;aaa&apos;</span><br><span class="line">&gt;&gt;&gt; end</span><br><span class="line">&apos;bbbbbb&apos;</span><br><span class="line">&gt;&gt;&gt; str1 = &apos;aaa:bbbbbb:cccc&apos;</span><br><span class="line">&gt;&gt;&gt; (front,end) = str1.split(&apos;:&apos;)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">ValueError: too many values to unpack (expected 2)</span><br><span class="line">&gt;&gt;&gt; (front,end) = str1.split(&apos;:&apos;,1)</span><br><span class="line">&gt;&gt;&gt; (front,mid,end) = str1.split(&apos;:&apos;)</span><br><span class="line">&gt;&gt;&gt; mid</span><br><span class="line">&apos;bbbbbb&apos;</span><br><span class="line">&gt;&gt;&gt; type(str1.split(&apos;:&apos;))</span><br><span class="line">&lt;class &apos;list&apos;&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="OS模块"><a href="#OS模块" class="headerlink" title="OS模块"></a>OS模块</h2><p>getcwd() 返回当前目录<br>mkdir()<br>makedirs()<br>remove()<br>rmdir()<br>removedirs()<br>system()<br>listdir()<br>chdir()  </p>
-<p>os.path.?<br>os.path.dirname()  </p>
-<h2 id="pickle模块"><a href="#pickle模块" class="headerlink" title="pickle模块"></a>pickle模块</h2><p>存储，恢复类、对象、列表等数据<br>e.g.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import pickle</span><br><span class="line"></span><br><span class="line">dic1 = &#123;</span><br><span class="line">    &apos;a&apos;:1,</span><br><span class="line">    &apos;b&apos;:2,</span><br><span class="line">    &apos;c&apos;:3</span><br><span class="line">&#125;</span><br><span class="line">pickle_file = open(&apos;filename.pkl&apos;,&apos;wb&apos;)</span><br><span class="line">pickle.dump(dic1,pickle_file)</span><br><span class="line">pickle_file.close()</span><br><span class="line"></span><br><span class="line">#recover</span><br><span class="line">pickle_file = open(&apos;filename.pkl&apos;,&apos;rb&apos;)</span><br><span class="line">dic2 = pickle.load(pickle_file)</span><br></pre></td></tr></table></figure></p>
-
+          <h2 id="python文件学习笔记"><a href="#python文件学习笔记" class="headerlink" title="python文件学习笔记"></a>python文件学习笔记</h2>
+          <p>
+            <a href="/2017/05/30/python文件/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -714,26 +470,150 @@ def getArea(self):
       </div>
       <div class="article-entry">
         
-          <a id="more"></a>
-<h2 id="python的函数、对象和模块"><a href="#python的函数、对象和模块" class="headerlink" title="python的函数、对象和模块"></a>python的函数、对象和模块</h2><h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p><code>def function():
-    print()</code></p>
-<p>调用时会从当前代码往上找</p>
-<p>函数文档：<br>    格式：函数名.<strong>doc</strong></p>
-<p>e.g<br>显示print函数的函数文档<br>print.<strong>doc</strong></p>
-<p>形参<br>实参<br>收集参数：参数前加<em>号：</em>param</p>
-<p>def test(*params):<br>    print(len(params))<br>    print(params[1])</p>
-<p>test(1,aa,3)</p>
-<p>如print方法中的参数，本身就是收集参数</p>
-<p>返回值：<br>一般来说，有返回值是函数，没返回值是过程  </p>
-<p>但python严格来讲只有函数，在不写返回值的时候返回None<br>可返回多个值，比如用一个列表：<br>return[1,’a’,2]<br>直接用逗号分隔，会返回元组：<br>return 1，2，3  </p>
-<p><strong>全局变量:</strong><br>作用于整个文件<br>只可在函数内读取<br>若在某函数内修改全局变量相当于在局部重新创建了一个同名局部变量<br>若在函数内修改全局变量，需用globle定义：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def fun():  </span><br><span class="line">    globle variable  </span><br><span class="line">    variable = 10</span><br></pre></td></tr></table></figure>
-<p><strong>内嵌函数(内部函数)：</strong><br>函数内创建另一个函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def fun1():</span><br><span class="line">    print(fun1)</span><br><span class="line">    def fun2():</span><br><span class="line">        print(fun2)</span><br></pre></td></tr></table></figure></p>
-<p><strong>闭包:</strong><br>在一个内部函数里对外部作用域（非全局）的变量进行了引用，该内部函数就叫闭包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def funX(x):</span><br><span class="line">...     def funY(y):</span><br><span class="line">...         return x*y</span><br><span class="line">...     return funY</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; i = funX(2)</span><br><span class="line">&gt;&gt;&gt; i</span><br><span class="line">&lt;function funY at 0x03509770&gt;</span><br><span class="line">&gt;&gt;&gt; type(i)</span><br><span class="line">&lt;type &apos;function&apos;&gt;</span><br><span class="line">&gt;&gt;&gt; i(5)</span><br><span class="line">10</span><br><span class="line">&gt;&gt;&gt; funX(2)(5)</span><br><span class="line">10</span><br><span class="line">&gt;&gt;&gt; funY(5)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">NameError: name &apos;funY&apos; is not defined</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;&gt;&gt; def fun1():</span><br><span class="line">...     x = 5</span><br><span class="line">...     def fun2():</span><br><span class="line">...         x *= x</span><br><span class="line">...         return x</span><br><span class="line">...     return fun2()</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; fun1()</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 6, in fun1</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 4, in fun2</span><br><span class="line">UnboundLocalError: local variable &apos;x&apos; referenced before assignment</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">因为列表不放在栈里，所以这里换成列表就没问题</span><br><span class="line">&gt;&gt;&gt; def fun1():</span><br><span class="line">...     x = [5]</span><br><span class="line">...     def fun2():</span><br><span class="line">...         x[0] *= x[0]</span><br><span class="line">...         return x[0]</span><br><span class="line">...     return fun2()</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; fun1()</span><br><span class="line">25</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">但是在python3里可以使用nonlocal关键字来表明该变量非本地变量：  </span><br><span class="line">&gt;&gt;&gt; def fun1():</span><br><span class="line">...     x = 5</span><br><span class="line">...     def fun2():</span><br><span class="line">...         nonlocal x</span><br><span class="line">...         x *= x</span><br><span class="line">...         return x</span><br><span class="line">...     return fun2()</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; fun1()</span><br><span class="line">25</span><br></pre></td></tr></table></figure>
+          <h2 id="python的函数、对象和模块学习笔记"><a href="#python的函数、对象和模块学习笔记" class="headerlink" title="python的函数、对象和模块学习笔记"></a>python的函数、对象和模块学习笔记</h2>
+          <p>
+            <a href="/2017/05/30/python的函数、对象和模块/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
 
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2017/05/30/匿名表达式lambda/" >
+  匿名表达式lambda
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2017/05/30/匿名表达式lambda/"><span class="article-date">
+  2017-05-30
+</span>
+</a>
+        
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/py/">py</a></li></ul>
+	</span>
+
+
+        
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/py/">py</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+	</span>
+
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="匿名表达式lambda学习笔记"><a href="#匿名表达式lambda学习笔记" class="headerlink" title="匿名表达式lambda学习笔记"></a>匿名表达式lambda学习笔记</h2>
+          <p>
+            <a href="/2017/05/30/匿名表达式lambda/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2017/05/30/异常处理学习/" >
+  异常处理学习
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2017/05/30/异常处理学习/"><span class="article-date">
+  2017-05-30
+</span>
+</a>
+        
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/py/">py</a></li></ul>
+	</span>
+
+
+        
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/py/">py</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+	</span>
+
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="异常处理学习学习笔记"><a href="#异常处理学习学习笔记" class="headerlink" title="异常处理学习学习笔记"></a>异常处理学习学习笔记</h2>
+          <p>
+            <a href="/2017/05/30/异常处理学习/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2017/05/30/Python执行系统命令的方法 /" >
+  Python执行系统命令的方法
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2017/05/30/Python执行系统命令的方法 /"><span class="article-date">
+  2017-05-30
+</span>
+</a>
+        
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/py/">py</a></li></ul>
+	</span>
+
+
+        
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/py/">py</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+	</span>
+
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="Python执行系统命令的方法学习笔记"><a href="#Python执行系统命令的方法学习笔记" class="headerlink" title="Python执行系统命令的方法学习笔记"></a>Python执行系统命令的方法学习笔记</h2>
+          <p>
+            <a href="/2017/05/30/Python执行系统命令的方法 /">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -743,7 +623,7 @@ def getArea(self):
 
 
   <div class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2017/05/page/2/">2</a><a class="page-number" href="/archives/2017/05/page/3/">3</a><a class="extend next" rel="next" href="/archives/2017/05/page/2/">Next</a>
+    <span class="page-number current">1</span><a class="page-number" href="/archives/2017/05/page/2/">2</a><a class="page-number" href="/archives/2017/05/page/3/">3</a><a class="extend next" rel="next" href="/archives/2017/05/page/2/">下一页</a>
   </div>
 
 

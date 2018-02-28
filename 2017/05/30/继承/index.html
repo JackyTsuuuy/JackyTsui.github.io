@@ -12,18 +12,18 @@
   
 </title>
 
-<meta name="description" content="继承子类重写了父类的方法，1.调用未绑定过的父类方法2.使用super函数   e.g.1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162import random as rclass Fish:	def __init">
+<meta name="description" content="继承学习笔记">
 <meta name="keywords" content="py,学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="继承">
 <meta property="og:url" content="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/05/30/继承/index.html">
 <meta property="og:site_name" content="C&#39;s LOG">
-<meta property="og:description" content="继承子类重写了父类的方法，1.调用未绑定过的父类方法2.使用super函数   e.g.1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162import random as rclass Fish:	def __init">
+<meta property="og:description" content="继承学习笔记">
 <meta property="og:locale" content="any">
-<meta property="og:updated_time" content="2018-02-28T07:44:04.144Z">
+<meta property="og:updated_time" content="2018-02-28T07:52:38.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="继承">
-<meta name="twitter:description" content="继承子类重写了父类的方法，1.调用未绑定过的父类方法2.使用super函数   e.g.1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162import random as rclass Fish:	def __init">
+<meta name="twitter:description" content="继承学习笔记">
 <meta name="twitter:creator" content="@None">
 <link rel="publisher" href="None">
 <meta property="fb:admins" content="None">
@@ -88,21 +88,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">Category</a>
+                <a href="javascript:;">分类</a>
                 <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/py/">py</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技巧/">技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/逆向与二进制/">逆向与二进制</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
+                <a href="javascript:;">标签</a>
                 <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/msf/">msf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/py/">py</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安卓逆向/">安卓逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境搭建/">环境搭建</a><span class="tag-list-count">3</span></li></ul>
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
+                <a href="javascript:;">归档</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
@@ -182,7 +182,7 @@
 
   </div>
   <div class="article-entry">
-    <a id="more"></a>
+    <h2 id="继承学习笔记"><a href="#继承学习笔记" class="headerlink" title="继承学习笔记"></a>继承学习笔记</h2><a id="more"></a>
 <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>子类重写了父类的方法，<br>1.调用未绑定过的父类方法<br>2.使用super函数  </p>
 <p><strong>e.g.</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">import random as r</span><br><span class="line"></span><br><span class="line">class Fish:</span><br><span class="line">	def __init__(self):</span><br><span class="line">		self.x = r.randint(0,10)</span><br><span class="line">		self.y = r.randint(0,10)</span><br><span class="line"></span><br><span class="line">	def move(self):</span><br><span class="line">		self.x -= 1</span><br><span class="line">		print(&quot;My position is :&quot;,self.x,self.y)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Goldfish(Fish):</span><br><span class="line">	pass</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Salmon(Fish):</span><br><span class="line">	&quot;&quot;&quot;docstring for Salmon&quot;&quot;&quot;</span><br><span class="line">	#def __init__()</span><br><span class="line">	def __init__(self):</span><br><span class="line">		super().__init__()</span><br><span class="line">		self.hungry = True</span><br><span class="line">	def eat(self):</span><br><span class="line">		if self.hungry:</span><br><span class="line">			print(&quot;Salmon is full&quot;)</span><br><span class="line">			self.hungry = False</span><br><span class="line">		else:</span><br><span class="line">			print(&quot;salmon eats too much&quot;)</span><br><span class="line">	</span><br><span class="line"># class Salmon(Fish):</span><br><span class="line"># 	&quot;&quot;&quot;docstring for Salmon&quot;&quot;&quot;</span><br><span class="line"># 	#def __init__()</span><br><span class="line"># 	def __init__(self):</span><br><span class="line"># 		super(Salmon,self).__init__()</span><br><span class="line"># 		self.hungry = True</span><br><span class="line"># 	def eat(self):</span><br><span class="line"># 		if self.hungry:</span><br><span class="line"># 			print(&quot;Salmon is full&quot;)</span><br><span class="line"># 			self.hungry = False</span><br><span class="line"># 		else:</span><br><span class="line"># 			print(&quot;salmon eats too much&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Shark(Fish):</span><br><span class="line"></span><br><span class="line">	def __init__(self):</span><br><span class="line">		Fish.__init__(self)     #self是子类的对象Fish.__init__(Shark)</span><br><span class="line">		self.hungry = True</span><br><span class="line">	def eat(self):</span><br><span class="line">		if self.hungry:</span><br><span class="line">			print(&quot;shark is full&quot;)</span><br><span class="line">			self.hungry = False</span><br><span class="line">		else:</span><br><span class="line">			print(&quot;shark eats too much&quot;)</span><br><span class="line"></span><br><span class="line">salmon = Salmon()</span><br><span class="line">salmon.move()</span><br><span class="line">salmon.eat()</span><br><span class="line"></span><br><span class="line">shark = Shark()</span><br><span class="line">shark.move()</span><br><span class="line">shark.eat()</span><br></pre></td></tr></table></figure></p>
 <p>python严格要求方法需要有实例才可被调用，及绑定<br>缺少了self参数（对象）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; class BB:</span><br><span class="line">...     def printBB():</span><br><span class="line">...         print(&apos;not binded&apos;)</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; BB.printBB()</span><br><span class="line">not binded</span><br><span class="line">&gt;&gt;&gt; bb = BB()</span><br><span class="line">&gt;&gt;&gt; bb.printBB()</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">TypeError: printBB() takes 0 positional arguments but 1 was given</span><br></pre></td></tr></table></figure></p>
@@ -191,7 +191,7 @@
   <footer class="article-footer">
     
   <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.a" target="_blank" title="Attribution-ShareAlike">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.a" target="_blank" title="署名-相同方式共享">
       <img src="/images/cc/cc.png">
       
           <img src="/images/cc/by.png">
@@ -199,7 +199,7 @@
           <img src="/images/cc/sa.png">
       
       <span>
-        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
       </span>
     </a>
   </div>

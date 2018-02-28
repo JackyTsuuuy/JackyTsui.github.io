@@ -12,18 +12,18 @@
   
 </title>
 
-<meta name="description" content="魔法方法：描述类（符）property方法使用描述符（类）将某种特殊类型的实例指派给另一个类的属性[讲人话就是类的属性是描述符类] 需实现以下方法：instance:属性的所有者  get(self,instance,owner)set(self,instance,value)delete(self,instance)e.g.摄氏度华氏度转换:12345678910111213141516171">
+<meta name="description" content="魔法方法：描述类（符）学习笔记">
 <meta name="keywords" content="py,学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="魔法方法：描述类（符）">
 <meta property="og:url" content="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/05/30/魔法方法：描述类（符）/index.html">
 <meta property="og:site_name" content="C&#39;s LOG">
-<meta property="og:description" content="魔法方法：描述类（符）property方法使用描述符（类）将某种特殊类型的实例指派给另一个类的属性[讲人话就是类的属性是描述符类] 需实现以下方法：instance:属性的所有者  get(self,instance,owner)set(self,instance,value)delete(self,instance)e.g.摄氏度华氏度转换:12345678910111213141516171">
+<meta property="og:description" content="魔法方法：描述类（符）学习笔记">
 <meta property="og:locale" content="any">
-<meta property="og:updated_time" content="2018-02-28T07:44:04.144Z">
+<meta property="og:updated_time" content="2018-02-28T07:52:38.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="魔法方法：描述类（符）">
-<meta name="twitter:description" content="魔法方法：描述类（符）property方法使用描述符（类）将某种特殊类型的实例指派给另一个类的属性[讲人话就是类的属性是描述符类] 需实现以下方法：instance:属性的所有者  get(self,instance,owner)set(self,instance,value)delete(self,instance)e.g.摄氏度华氏度转换:12345678910111213141516171">
+<meta name="twitter:description" content="魔法方法：描述类（符）学习笔记">
 <meta name="twitter:creator" content="@None">
 <link rel="publisher" href="None">
 <meta property="fb:admins" content="None">
@@ -88,21 +88,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">Category</a>
+                <a href="javascript:;">分类</a>
                 <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/py/">py</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技巧/">技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/逆向与二进制/">逆向与二进制</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
+                <a href="javascript:;">标签</a>
                 <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/msf/">msf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/py/">py</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安卓逆向/">安卓逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境搭建/">环境搭建</a><span class="tag-list-count">3</span></li></ul>
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
+                <a href="javascript:;">归档</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
@@ -182,7 +182,7 @@
 
   </div>
   <div class="article-entry">
-    <a id="more"></a>
+    <h2 id="魔法方法：描述类（符）学习笔记"><a href="#魔法方法：描述类（符）学习笔记" class="headerlink" title="魔法方法：描述类（符）学习笔记"></a>魔法方法：描述类（符）学习笔记</h2><a id="more"></a>
 <h1 id="魔法方法：描述类（符）"><a href="#魔法方法：描述类（符）" class="headerlink" title="魔法方法：描述类（符）"></a>魔法方法：描述类（符）</h1><h2 id="property方法使用"><a href="#property方法使用" class="headerlink" title="property方法使用"></a>property方法使用</h2><p><strong>描述符（类）</strong><br>将某种特殊类型的实例指派给另一个类的属性<br>[讲人话就是类的属性是描述符类]</p>
 <p>需实现以下方法：<br>instance:属性的所有者 </p>
 <p><strong>get</strong>(self,instance,owner)<br><strong>set</strong>(self,instance,value)<br><strong>delete</strong>(self,instance)<br>e.g.<br>摄氏度华氏度转换:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Celsius:</span><br><span class="line">    def __init__(self,value = 26.0):</span><br><span class="line">        self.value = float(value)</span><br><span class="line"></span><br><span class="line">    def __get__(self,instance,owner):</span><br><span class="line">        return self.value</span><br><span class="line"></span><br><span class="line">    def __set__(self,instance,value):</span><br><span class="line">        self.value = float(value)</span><br><span class="line">    </span><br><span class="line">class Fahrenheit():</span><br><span class="line">    def __get__(self,instance,value):</span><br><span class="line">        return instance.cel * 1.8 + 32</span><br><span class="line">    def __set__(self,instance,value):</span><br><span class="line">        instance.cel = (float(value) - 32) / 1.8</span><br><span class="line"></span><br><span class="line">class Temperature:</span><br><span class="line">    cel = Celsius()</span><br><span class="line">    fah = Fahrenheit()</span><br></pre></td></tr></table></figure></p>
@@ -191,7 +191,7 @@
   <footer class="article-footer">
     
   <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.a" target="_blank" title="Attribution-ShareAlike">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.a" target="_blank" title="署名-相同方式共享">
       <img src="/images/cc/cc.png">
       
           <img src="/images/cc/by.png">
@@ -199,7 +199,7 @@
           <img src="/images/cc/sa.png">
       
       <span>
-        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
       </span>
     </a>
   </div>

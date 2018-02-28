@@ -83,21 +83,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">Category</a>
+                <a href="javascript:;">分类</a>
                 <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/py/">py</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技巧/">技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/逆向与二进制/">逆向与二进制</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
+                <a href="javascript:;">标签</a>
                 <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/msf/">msf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/py/">py</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安卓逆向/">安卓逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境搭建/">环境搭建</a><span class="tag-list-count">3</span></li></ul>
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
+                <a href="javascript:;">归档</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
@@ -159,15 +159,15 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2017/05/30/面向对象相关BIF/" >
-  面向对象相关BIF
+        <a href="/2017/05/30/魔术方法的简单定制/" >
+  魔术方法的简单定制
 </a>
 
       </h3>
       
 
       <div class="article-info">
-        <a href="/2017/05/30/面向对象相关BIF/"><span class="article-date">
+        <a href="/2017/05/30/魔术方法的简单定制/"><span class="article-date">
   2017-05-30
 </span>
 </a>
@@ -186,14 +186,12 @@
       </div>
       <div class="article-entry">
         
-          <a id="more"></a>
-<h1 id="面向对象相关BIF"><a href="#面向对象相关BIF" class="headerlink" title="面向对象相关BIF"></a>面向对象相关BIF</h1><p>1.issubclass(class,classinfo):第一个参数class是第二个classinfo的子类返回true  </p>
-<p>2.isinstance(object,classinfo):检查第一个参数object是否是第二个classinfo的对象，返回true或false  </p>
-<p>3.hasattr(object,name):检查第一个参数object对象是否含有第二个name的属性  </p>
-<p>4.getattr(object,name[,default]):返回对象指定的属性值  </p>
-<p>5.setattr(object,name,value)：设置指定属性的值<br>6.delattr(object,name):删除指定属性的值  </p>
-<p>7.property(fget=None,fset=NOne,fdel=None,doc=None):第一个参数是获得属性的方法，第二个是设置属性的方法，第三个是删除属性的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; class C:</span><br><span class="line">	def __init__(self,size = 10):</span><br><span class="line">		self.size = size</span><br><span class="line">	def getSize(self):</span><br><span class="line">		return self.size</span><br><span class="line">	def setSize(self,value):</span><br><span class="line">		self.size = value</span><br><span class="line">	def delSize(self):</span><br><span class="line">		del self.size</span><br><span class="line">	x = property(getSize,setSize,delSize)</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">&gt;&gt;&gt; c1 = C()</span><br><span class="line">&gt;&gt;&gt; c1.x</span><br><span class="line">10</span><br><span class="line">&gt;&gt;&gt; c1.x = 18</span><br><span class="line">&gt;&gt;&gt; c1.x</span><br><span class="line">18</span><br><span class="line">&gt;&gt;&gt; c1.getSize()</span><br><span class="line">18</span><br><span class="line">&gt;&gt;&gt; c1.setSize(20)</span><br><span class="line">&gt;&gt;&gt; c1.getSize()</span><br><span class="line">20</span><br><span class="line">&gt;&gt;&gt; del c1.x</span><br><span class="line">&gt;&gt;&gt; c1.getSize()</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;pyshell#28&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">    c1.getSize()</span><br><span class="line">  File &quot;&lt;pyshell#16&gt;&quot;, line 5, in getSize</span><br><span class="line">    return self.size</span><br><span class="line">AttributeError: &apos;C&apos; object has no attribute &apos;size&apos;</span><br><span class="line">&gt;&gt;&gt; c1.x = 3</span><br><span class="line">&gt;&gt;&gt; c1.getSize()</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; c1.delSize()</span><br><span class="line">&gt;&gt;&gt; c1.getSize()</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;pyshell#32&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">    c1.getSize()</span><br><span class="line">  File &quot;&lt;pyshell#16&gt;&quot;, line 5, in getSize</span><br><span class="line">    return self.size</span><br><span class="line">AttributeError: &apos;C&apos; object has no attribute &apos;size&apos;</span><br></pre></td></tr></table></figure></p>
-
+          <h2 id="魔术方法的简单定制学习笔记"><a href="#魔术方法的简单定制学习笔记" class="headerlink" title="魔术方法的简单定制学习笔记"></a>魔术方法的简单定制学习笔记</h2>
+          <p>
+            <a href="/2017/05/30/魔术方法的简单定制/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -236,11 +234,12 @@
       </div>
       <div class="article-entry">
         
-          <a id="more"></a>
-<h1 id="魔法方法：描述类（符）"><a href="#魔法方法：描述类（符）" class="headerlink" title="魔法方法：描述类（符）"></a>魔法方法：描述类（符）</h1><h2 id="property方法使用"><a href="#property方法使用" class="headerlink" title="property方法使用"></a>property方法使用</h2><p><strong>描述符（类）</strong><br>将某种特殊类型的实例指派给另一个类的属性<br>[讲人话就是类的属性是描述符类]</p>
-<p>需实现以下方法：<br>instance:属性的所有者 </p>
-<p><strong>get</strong>(self,instance,owner)<br><strong>set</strong>(self,instance,value)<br><strong>delete</strong>(self,instance)<br>e.g.<br>摄氏度华氏度转换:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Celsius:</span><br><span class="line">    def __init__(self,value = 26.0):</span><br><span class="line">        self.value = float(value)</span><br><span class="line"></span><br><span class="line">    def __get__(self,instance,owner):</span><br><span class="line">        return self.value</span><br><span class="line"></span><br><span class="line">    def __set__(self,instance,value):</span><br><span class="line">        self.value = float(value)</span><br><span class="line">    </span><br><span class="line">class Fahrenheit():</span><br><span class="line">    def __get__(self,instance,value):</span><br><span class="line">        return instance.cel * 1.8 + 32</span><br><span class="line">    def __set__(self,instance,value):</span><br><span class="line">        instance.cel = (float(value) - 32) / 1.8</span><br><span class="line"></span><br><span class="line">class Temperature:</span><br><span class="line">    cel = Celsius()</span><br><span class="line">    fah = Fahrenheit()</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; t = Temperature()</span><br><span class="line">&gt;&gt;&gt; t.cel = 100</span><br><span class="line">&gt;&gt;&gt; t.fah</span><br><span class="line">212.0</span><br><span class="line">&gt;&gt;&gt; t.fah = 100</span><br><span class="line">&gt;&gt;&gt; t.cel</span><br><span class="line">37.77777777777778</span><br></pre></td></tr></table></figure>
+          <h2 id="魔法方法：描述类（符）学习笔记"><a href="#魔法方法：描述类（符）学习笔记" class="headerlink" title="魔法方法：描述类（符）学习笔记"></a>魔法方法：描述类（符）学习笔记</h2>
+          <p>
+            <a href="/2017/05/30/魔法方法：描述类（符）/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -286,7 +285,7 @@
           <h3 id="一些常用payload的生成命令，坑很多，这些还比较好用"><a href="#一些常用payload的生成命令，坑很多，这些还比较好用" class="headerlink" title="一些常用payload的生成命令，坑很多，这些还比较好用"></a>一些常用payload的生成命令，坑很多，这些还比较好用</h3>
           <p>
             <a href="/2017/02/26/msfvenom生成各类Payload命令/">
-              Read More
+              阅读全文
             </a>
           </p>
         
@@ -334,7 +333,7 @@
           <h2 id="客户机加入域："><a href="#客户机加入域：" class="headerlink" title="客户机加入域："></a>客户机加入域：</h2>
           <p>
             <a href="/2016/04/01/Win2008-英文版-搭建简单域环境-3/">
-              Read More
+              阅读全文
             </a>
           </p>
         
@@ -382,7 +381,7 @@
           <h2 id="域账号的配置："><a href="#域账号的配置：" class="headerlink" title="域账号的配置："></a>域账号的配置：</h2>
           <p>
             <a href="/2016/04/01/Win2008-英文版-搭建简单域环境-2/">
-              Read More
+              阅读全文
             </a>
           </p>
         
@@ -430,7 +429,7 @@
           <h2 id="域控的搭建："><a href="#域控的搭建：" class="headerlink" title="域控的搭建："></a>域控的搭建：</h2>
           <p>
             <a href="/2016/04/01/Win2008-英文版-搭建简单域环境-1/">
-              Read More
+              阅读全文
             </a>
           </p>
         
@@ -478,7 +477,7 @@
           <h2 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h2><p>最近老想着折腾一个属于自己的博客。(虽然简书用起来方便，但是github逼格高啊！)所以出于种种原因吧，还是觉得github能比较个人特色鲜明点。而且在有些国内的博客都要翻墙访问的情况下，github的个人主页居然不需要，这种事也让我感受到了意外的惊喜。所以反正都是要翻墙折腾，不如就选一个有逼格的，当然装逼也是得付出点代价的，需要稍稍花点时间来折腾。<br>
           <p>
             <a href="/2016/03/31/github-pages-hexo创建个人主页/">
-              Read More
+              阅读全文
             </a>
           </p>
         
@@ -492,7 +491,7 @@
 
 
   <div class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
   </div>
 
 
