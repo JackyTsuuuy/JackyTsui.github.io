@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="魔法方法：属性访问学习笔记">
+<meta name="description" content="魔法方法：定制序列学习笔记">
 <meta name="keywords" content="py,学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="魔法方法：属性访问">
-<meta property="og:url" content="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/05/30/魔法方法：属性访问/index.html">
+<meta property="og:title" content="魔法方法：定制序列">
+<meta property="og:url" content="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/06/01/魔法方法：定制序列/index.html">
 <meta property="og:site_name" content="C&#39;s LOG">
-<meta property="og:description" content="魔法方法：属性访问学习笔记">
+<meta property="og:description" content="魔法方法：定制序列学习笔记">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-28T07:52:38.767Z">
+<meta property="og:updated_time" content="2018-03-23T08:38:02.006Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="魔法方法：属性访问">
-<meta name="twitter:description" content="魔法方法：属性访问学习笔记">
+<meta name="twitter:title" content="魔法方法：定制序列">
+<meta name="twitter:description" content="魔法方法：定制序列学习笔记">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/05/30/魔法方法：属性访问/"/>
+  <link rel="canonical" href="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/06/01/魔法方法：定制序列/"/>
 
 
 
 
 
-  <title>魔法方法：属性访问 | C's LOG</title>
+  <title>魔法方法：定制序列 | C's LOG</title>
   
 
 
@@ -270,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/05/30/魔法方法：属性访问/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/06/01/魔法方法：定制序列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JackyTsuuuy">
@@ -287,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">魔法方法：属性访问</h1>
+          <h1 class="post-title" itemprop="name headline">魔法方法：定制序列</h1>
         
 
         <div class="post-meta">
@@ -299,8 +299,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-30T13:51:57-07:00">
-                2017-05-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-01T13:51:57-07:00">
+                2017-06-01
               </time>
             
 
@@ -339,7 +339,7 @@
 
           
           
-             <span id="/2017/05/30/魔法方法：属性访问/" class="leancloud_visitors" data-flag-title="魔法方法：属性访问">
+             <span id="/2017/06/01/魔法方法：定制序列/" class="leancloud_visitors" data-flag-title="魔法方法：定制序列">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -370,53 +370,14 @@
       
 
       
-        <h2 id="魔法方法：属性访问学习笔记"><a href="#魔法方法：属性访问学习笔记" class="headerlink" title="魔法方法：属性访问学习笔记"></a>魔法方法：属性访问学习笔记</h2><a id="more"></a>
-<h1 id="魔法方法：属性访问"><a href="#魔法方法：属性访问" class="headerlink" title="魔法方法：属性访问"></a>魔法方法：属性访问</h1><h2 id="属性访问的方法"><a href="#属性访问的方法" class="headerlink" title="属性访问的方法"></a>属性访问的方法</h2><p><strong>1.使用getattr()</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; class C:</span><br><span class="line">	def __init__(self):</span><br><span class="line">		self.x = &apos;test&apos;</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">&gt;&gt;&gt; c = C()</span><br><span class="line">&gt;&gt;&gt; c.x</span><br><span class="line">&apos;test&apos;</span><br><span class="line">&gt;&gt;&gt; getattr(c,&apos;x&apos;,&apos;cant get this attr&apos;)</span><br><span class="line">&apos;test&apos;</span><br><span class="line">&gt;&gt;&gt; getattr(c,&apos;y&apos;,&apos;cant get this attr&apos;)</span><br><span class="line">&apos;cant get this attr&apos;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">**2.使用property()**</span><br></pre></td></tr></table></figure></p>
+        <h2 id="魔法方法：定制序列学习笔记"><a href="#魔法方法：定制序列学习笔记" class="headerlink" title="魔法方法：定制序列学习笔记"></a>魔法方法：定制序列学习笔记</h2><a id="more"></a>
+<h1 id="魔法方法：定制序列"><a href="#魔法方法：定制序列" class="headerlink" title="魔法方法：定制序列"></a>魔法方法：定制序列</h1><p>定制容器不可变，只需定义<strong>len</strong>()和<strong>getitem</strong>()<br>定制容器可变，除<strong>len</strong>()和<strong>getitem</strong>()，还需定义<strong>setitem</strong>()和<strong>delitem</strong>()  </p>
+<p><strong>len</strong>(self):返回容器中元素的个数<br><strong>getitem</strong>(self,key)：获取容器中指定元素的行为，self[key]<br><strong>setitem</strong>(self,key,value):设置容器中指定元素的行为，self[key]=value<br><strong>delitem</strong>(self,key):删除容器中指定元素的行为，del self[key]  </p>
+<p>e.g.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Countlist:</span><br><span class="line">    def __init__(self,*args):</span><br><span class="line">        # 列表推导式</span><br><span class="line">        self.values = [x for x in args]</span><br><span class="line">        self.count = &#123;&#125;.fromkeys(range(len(self.value)),0)</span><br><span class="line"></span><br><span class="line">    def __len__(self):</span><br><span class="line">        return len(self.values)</span><br><span class="line"></span><br><span class="line">    def __getitem__(self,key):</span><br><span class="line">        self.count[key] += 1</span><br><span class="line">        return self.values[key]</span><br><span class="line">```  </span><br><span class="line">运行结果</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <blockquote>
 <blockquote>
-<p>class C:<br>    def <strong>init</strong>(self,size=10):<br>        self.size = size<br>    def getSize(self):<br>        return self.size<br>    def setSize(self,value):<br>        self.size = value<br>    def delSize(self):<br>        del self.size<br>    x = property(getSize,setSize,delSize)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>c = C()<br>c.size<br>10<br>c.x = 13<br>c.x<br>13<br>c.size<br>13<br>del c.x<br>c.size<br>Traceback (most recent call last):<br>  File “&lt;pyshell#28&gt;”, line 1, in <module><br>    c.size<br>AttributeError: ‘C’ object has no attribute ‘size’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 属性访问的魔法方法  </span><br><span class="line">__getattr__(self,name)  </span><br><span class="line">定义当用户试图获取一个不存在的属性时的行为  </span><br><span class="line">__getattribute(self,name)  </span><br><span class="line">定义当该类的属性被访问时的行为  </span><br><span class="line">__setattr__(self,name,value)  </span><br><span class="line">定义当一个属性被设置时的行为,name赋值左边的那个，value赋值右边的那个    </span><br><span class="line">__delattr__(self,name)  </span><br><span class="line">定义一个属性被删除时的行为</span><br></pre></td></tr></table></figure></module></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>class C:<br>    def <strong>getattribute</strong>(self,name):<br>        print(“getattribute”)<br>        return super().<strong>getattribute</strong>(name)<br>    def <strong>getattr</strong>(self,name):<br>        print(“getattr”)<br>    def <strong>setattr</strong>(self,name,value):<br>        print(“setattr”)<br>        super().<strong>setattr</strong>(name,value)<br>    def <strong>delattr</strong>(self,name):<br>        print(“delattr”)<br>        super.<strong>delattr</strong>(name)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>c.x<br>Traceback (most recent call last):<br>  File “&lt;pyshell#60&gt;”, line 1, in <module><br>    c.x<br>NameError: name ‘c’ is not defined<br>c = C()<br>c.x<br>getattribute<br>getattr<br>c.x = 1<br>setattr<br>c.x<br>getattribute<br>1<br>del c.x<br>delattr<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e.g.</span><br></pre></td></tr></table></figure></module></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>class Rectangle:<br>    def <strong>init</strong>(self,width=0,height=0):<br>        self.width = width<br>        self.height = height</p>
-<pre><code>def __setattr__(self,name,value):
-    print(&apos;using setattr&apos;)
-    if name == &apos;square&apos;:
-        self.width = value
-        self.height = value
-    else:
-        super().__setattr__(name,value)
-        #self.__dict__[name] = value
-
-def getArea(self):
-    return self.width * self.height
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">运行结果：</span><br></pre></td></tr></table></figure>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>r = Rectangle()<br>using setattr<br>using setattr<br>r.width = 3<br>using setattr<br>r.square = 5<br>using setattr<br>using setattr<br>using setattr<br>r.bbb = 4<br>using setattr<br>r.height = 6<br>using setattr<br>r.getArea()<br>30<br>r.<strong>dict</strong><br>{‘width’: 5, ‘bbb’: 4, ‘height’: 6}<br><code>`</code></p>
+<p>c = Countlist(1,2,3,4)<br>c2 = Countlist(2,4,6,8)<br>c[1]<br>2<br>c[3]<br>4<br>c.count<br>{0: 0, 1: 1, 2: 0, 3: 1}<br>c[1]+c2[3]<br>10<br>c.count<br>{0: 0, 1: 2, 2: 0, 3: 1}<br>c2.count<br>{0: 0, 1: 0, 2: 0, 3: 1}<br><code>`</code></p>
 </blockquote>
 </blockquote>
 </blockquote>
@@ -452,8 +413,8 @@ def getArea(self):
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/30/魔法方法：定制序列/" rel="next" title="魔法方法：定制序列">
-                <i class="fa fa-chevron-left"></i> 魔法方法：定制序列
+              <a href="/2017/06/01/面向对象相关BIF/" rel="next" title="面向对象相关BIF">
+                <i class="fa fa-chevron-left"></i> 面向对象相关BIF
               </a>
             
           </div>
@@ -462,8 +423,8 @@ def getArea(self):
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/30/Python执行系统命令的方法 /" rel="prev" title="Python执行系统命令的方法">
-                Python执行系统命令的方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/01/模块，搜索路径，__name__='__main__'/" rel="prev" title="模块，搜索路径，__name__='__main__'">
+                模块，搜索路径，__name__='__main__' <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -545,7 +506,7 @@ def getArea(self):
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -556,7 +517,7 @@ def getArea(self):
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -567,7 +528,7 @@ def getArea(self):
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -600,7 +561,7 @@ def getArea(self):
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#魔法方法：属性访问学习笔记"><span class="nav-number">1.</span> <span class="nav-text">魔法方法：属性访问学习笔记</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#魔法方法：属性访问"><span class="nav-number"></span> <span class="nav-text">魔法方法：属性访问</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#属性访问的方法"><span class="nav-number">1.</span> <span class="nav-text">属性访问的方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#魔法方法：定制序列学习笔记"><span class="nav-number">1.</span> <span class="nav-text">魔法方法：定制序列学习笔记</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#魔法方法：定制序列"><span class="nav-number"></span> <span class="nav-text">魔法方法：定制序列</span></a></div>
             
 
           </div>
