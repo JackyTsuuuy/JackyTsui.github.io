@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="py,学习笔记," />
+  <meta name="keywords" content="神兵利器," />
 
 
 
@@ -86,18 +86,39 @@
 
 
 
-<meta name="description" content="import 的三种方法学习笔记">
-<meta name="keywords" content="py,学习笔记">
+<meta name="description" content="0x01 背景撸站难免会遇到需要爆破账号密码的时候，而这时遇到提交账号密码不是明文提交的就略显尴尬了。很多时候我都放弃了，因为一般爆破什么的也不会有好结果。但今天看到一个大佬写的神器，感觉如果是前端进行加密的话，还是可以抗争一下的。下面就分享一下自己用这个神器的一些心得，来帮助同样基础比较弱的头一次使用的其他小白。">
+<meta name="keywords" content="神兵利器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="import 的三种方法">
-<meta property="og:url" content="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/05/30/import 的三种方法  /index.html">
+<meta property="og:title" content="如何利用大佬的神器去破解前端加密">
+<meta property="og:url" content="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2018/07/03/如何利用大佬的神器去破解前端加密/index.html">
 <meta property="og:site_name" content="C&#39;s LOG">
-<meta property="og:description" content="import 的三种方法学习笔记">
+<meta property="og:description" content="0x01 背景撸站难免会遇到需要爆破账号密码的时候，而这时遇到提交账号密码不是明文提交的就略显尴尬了。很多时候我都放弃了，因为一般爆破什么的也不会有好结果。但今天看到一个大佬写的神器，感觉如果是前端进行加密的话，还是可以抗争一下的。下面就分享一下自己用这个神器的一些心得，来帮助同样基础比较弱的头一次使用的其他小白。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-28T07:52:38.736Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-911bc3958071e46b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-3f3b36617c2d490c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-c9e6c1810b7f8691.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-b33d5bd0ad840cab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-5236028a7cf255d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-034439bad7c12843.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-7225ffd2e4ea4b97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-a9bee16bde0da9de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-9fa725bc7ef19415.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-46b32ebecd9d9b3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-6d8eb0cc861c7839.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-8e9c3123b4cffde7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-d9530d53bec9515b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-30b36023a9b31dab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-d4fe9e457553f806.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-de5d1af79ad428bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-b8007252d45da50d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-9ffe388cce08cb93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-69896b2da8a30c5f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1800415-28cca4bde6043cb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-07-04T04:27:58.613Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="import 的三种方法">
-<meta name="twitter:description" content="import 的三种方法学习笔记">
+<meta name="twitter:title" content="如何利用大佬的神器去破解前端加密">
+<meta name="twitter:description" content="0x01 背景撸站难免会遇到需要爆破账号密码的时候，而这时遇到提交账号密码不是明文提交的就略显尴尬了。很多时候我都放弃了，因为一般爆破什么的也不会有好结果。但今天看到一个大佬写的神器，感觉如果是前端进行加密的话，还是可以抗争一下的。下面就分享一下自己用这个神器的一些心得，来帮助同样基础比较弱的头一次使用的其他小白。">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1800415-911bc3958071e46b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -127,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/05/30/import 的三种方法  /"/>
+  <link rel="canonical" href="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2018/07/03/如何利用大佬的神器去破解前端加密/"/>
 
 
 
 
 
-  <title>import 的三种方法 | C's LOG</title>
+  <title>如何利用大佬的神器去破解前端加密 | C's LOG</title>
   
 
 
@@ -270,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2017/05/30/import 的三种方法  /">
+    <link itemprop="mainEntityOfPage" href="https://github.com/JackyTsuuuy/JackyTsuuuy.github.io/2018/07/03/如何利用大佬的神器去破解前端加密/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JackyTsuuuy">
@@ -287,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">import 的三种方法</h1>
+          <h1 class="post-title" itemprop="name headline">如何利用大佬的神器去破解前端加密</h1>
         
 
         <div class="post-meta">
@@ -299,8 +320,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-30T13:51:57-07:00">
-                2017-05-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-03T20:17:04-07:00">
+                2018-07-03
               </time>
             
 
@@ -322,8 +343,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/py/" itemprop="url" rel="index">
-                    <span itemprop="name">py</span>
+                  <a href="/categories/神兵利器/" itemprop="url" rel="index">
+                    <span itemprop="name">神兵利器</span>
                   </a>
                 </span>
 
@@ -339,7 +360,7 @@
 
           
           
-             <span id="/2017/05/30/import 的三种方法  /" class="leancloud_visitors" data-flag-title="import 的三种方法">
+             <span id="/2018/07/03/如何利用大佬的神器去破解前端加密/" class="leancloud_visitors" data-flag-title="如何利用大佬的神器去破解前端加密">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -370,8 +391,61 @@
       
 
       
-        <h2 id="import-的三种方法学习笔记"><a href="#import-的三种方法学习笔记" class="headerlink" title="import 的三种方法学习笔记"></a>import 的三种方法学习笔记</h2><a id="more"></a>
-<h2 id="import-的三种方法"><a href="#import-的三种方法" class="headerlink" title="import 的三种方法"></a>import 的三种方法</h2><p>如使用easygui包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1.  </span><br><span class="line">&gt;&gt;&gt;import easygui  </span><br><span class="line">&gt;&gt;&gt;easygui.msgbox(&apos;test&apos;)</span><br><span class="line"></span><br><span class="line">2.  </span><br><span class="line">&gt;&gt;&gt;from easygui import *  </span><br><span class="line">&gt;&gt;&gt;msgbox(&apos;test&apos;)</span><br><span class="line">#会导致变量覆盖不推荐  </span><br><span class="line"></span><br><span class="line">3.  </span><br><span class="line">&gt;&gt;&gt;import easygui as g  </span><br><span class="line">&gt;&gt;&gt;g.msgbox(&apos;test&apos;)</span><br></pre></td></tr></table></figure></p>
+        <h2 id="0x01-背景"><a href="#0x01-背景" class="headerlink" title="0x01 背景"></a>0x01 背景</h2><p>撸站难免会遇到需要爆破账号密码的时候，而这时遇到提交账号密码不是明文提交的就略显尴尬了。很多时候我都放弃了，因为一般爆破什么的也不会有好结果。但今天看到一个大佬写的神器，感觉如果是前端进行加密的话，还是可以抗争一下的。<br>下面就分享一下自己用这个神器的一些心得，来帮助同样基础比较弱的头一次使用的其他小白。  </p>
+<a id="more"></a>
+<h2 id="0x02-所需材料"><a href="#0x02-所需材料" class="headerlink" title="0x02 所需材料"></a>0x02 所需材料</h2><p>首先是项目的地址<br><a href="https://github.com/c0ny1/jsEncrypter">https://github.com/c0ny1/jsEncrypter</a><br>正如描述所说这是一个burp插件，所以将打包好后的插件在burp中安装即可使用：<br><img src="https://upload-images.jianshu.io/upload_images/1800415-911bc3958071e46b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>解压后<br><img src="https://upload-images.jianshu.io/upload_images/1800415-3f3b36617c2d490c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>可看到一个简易的phantomjs的server，此时你需要下载phantomjs,<br><a href="http://phantomjs.org/" target="_blank" rel="noopener">http://phantomjs.org/</a> 找到自己需要的版本<br><img src="https://upload-images.jianshu.io/upload_images/1800415-c9e6c1810b7f8691.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  </p>
+<p>解压即可使用，这里为了方便后期修改，把server和要破解的js放到了同一目录<br><img src="https://upload-images.jianshu.io/upload_images/1800415-b33d5bd0ad840cab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>概括来说就是需要：</p>
+<ul>
+<li>burp及打包好的jar插件，并安装</li>
+<li>phantomjs</li>
+<li>项目中提供的phantomjs_server.js</li>
+</ul>
+<h2 id="0x03-使用"><a href="#0x03-使用" class="headerlink" title="0x03 使用"></a>0x03 使用</h2><p>流程很简单，即：  </p>
+<ol>
+<li>使用phantomjs启动phantomjs_server.js  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phantomjs.exe .\phantomjs_server.js</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>(当然这里的phantomjs_server.js需要根据实际破解的东西进行定制化改写）  </p>
+<ol>
+<li><p>burp里使用插件连接phantom_server.js，默认是本地1664端口，连接成功会显示true<br><img src="https://upload-images.jianshu.io/upload_images/1800415-5236028a7cf255d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  </p>
+</li>
+<li><p>点击test，server可以收到相关数据，表明测试成功<br><img src="https://upload-images.jianshu.io/upload_images/1800415-034439bad7c12843.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  </p>
+</li>
+<li><p>intruter里配置相关的插件就可以转换相关的payload<br><img src="https://upload-images.jianshu.io/upload_images/1800415-7225ffd2e4ea4b97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+</li>
+</ol>
+<h2 id="0x04-定制化改写"><a href="#0x04-定制化改写" class="headerlink" title="0x04 定制化改写"></a>0x04 定制化改写</h2><p>大致的使用流程了解后，就可以进行简单的尝试，这里的项目中附带了常用的几种加密方法，但是经常实际的需求并不能简单满足于此几种加密算法，所以我们还需对其进行定制化的改写<br><img src="https://upload-images.jianshu.io/upload_images/1800415-a9bee16bde0da9de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>那么如何改写，这里先拿base64做一个参照，  </p>
+<p>原始phantomjs_server.js文件：<br><img src="https://upload-images.jianshu.io/upload_images/1800415-9fa725bc7ef19415.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>发现很明显是用定制过的server.js去调用了加密算法的js实现了破解<br><img src="https://upload-images.jianshu.io/upload_images/1800415-46b32ebecd9d9b3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="原始phantomjs_server.js文件"></p>
+<p>定制后的jsEncrypter_base64.js<br><img src="https://upload-images.jianshu.io/upload_images/1800415-6d8eb0cc861c7839.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="定制后的jsEncrypter_base64.js"></p>
+<p>base64.js:<br><img src="https://upload-images.jianshu.io/upload_images/1800415-8e9c3123b4cffde7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="base64.js"></p>
+<p>所以这里主要是对这块进行修改即可：</p>
+<pre><code>// 处理函数
+function js_encrypt(payload){
+    var newpayload;
+    /**********在这里编写调用加密函数进行加密的代码************/
+
+    /**********************************************************/
+    return newpayload;
+}
+</code></pre><p>举个实战中的例子：  </p>
+<ol>
+<li><p>这里在获取短信验证码时会使用smsCheckPwd()方法：<br><img src="https://upload-images.jianshu.io/upload_images/1800415-d9530d53bec9515b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+<li><p>对这个方法在source里进行搜索，可发现出现在login.js中：<br><img src="https://upload-images.jianshu.io/upload_images/1800415-30b36023a9b31dab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+<li><p>点击该方法后可发现是由ajaxDirect()完成的发送动作：<br><img src="https://upload-images.jianshu.io/upload_images/1800415-d4fe9e457553f806.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+<li><p>对其进行搜索：<br><img src="https://upload-images.jianshu.io/upload_images/1800415-de5d1af79ad428bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+<li><p>跟进ajaxDirect:function(params)方法，发现参数是由desParam进行的加密，继续跟进<br><img src="https://upload-images.jianshu.io/upload_images/1800415-b8007252d45da50d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+<li><p>最终我们可以锁定是使用的des.js中的strEnc()进行的加密操作：<br><img src="https://upload-images.jianshu.io/upload_images/1800415-9ffe388cce08cb93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+<li><p>下载下来des.js之后，我们可从上文看出三个加密的密钥值，<br><img src="https://upload-images.jianshu.io/upload_images/1800415-69896b2da8a30c5f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>对其进行简单分析，即可对phantom_server.js进行定制化的改写，从而达到0x03节中的效果 ；<br><img src="https://upload-images.jianshu.io/upload_images/1800415-28cca4bde6043cb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+</ol>
+<p>+++ 感觉不错的话也欢迎大家多去支持神器作者的项目及博客哦(<a href="https://github.com/c0ny1/jsEncrypter">https://github.com/c0ny1/jsEncrypter</a>) +++</p>
 
       
     </div>
@@ -389,9 +463,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/py/" rel="tag"># py</a>
-          
-            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+            <a href="/tags/神兵利器/" rel="tag"># 神兵利器</a>
           
         </div>
       
@@ -404,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/30/Python执行系统命令的方法 /" rel="next" title="Python执行系统命令的方法">
-                <i class="fa fa-chevron-left"></i> Python执行系统命令的方法
+              <a href="/2018/03/23/无意中在mail头里的小发现/" rel="next" title="无意中在mail头里的小发现">
+                <i class="fa fa-chevron-left"></i> 无意中在mail头里的小发现
               </a>
             
           </div>
@@ -413,10 +485,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/30/python文件/" rel="prev" title="python文件">
-                python文件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -552,7 +620,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#import-的三种方法学习笔记"><span class="nav-number">1.</span> <span class="nav-text">import 的三种方法学习笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#import-的三种方法"><span class="nav-number">2.</span> <span class="nav-text">import 的三种方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-背景"><span class="nav-number">1.</span> <span class="nav-text">0x01 背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-所需材料"><span class="nav-number">2.</span> <span class="nav-text">0x02 所需材料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-使用"><span class="nav-number">3.</span> <span class="nav-text">0x03 使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-定制化改写"><span class="nav-number">4.</span> <span class="nav-text">0x04 定制化改写</span></a></li></ol></div>
             
 
           </div>
